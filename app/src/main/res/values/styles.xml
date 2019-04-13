@@ -1,0 +1,88 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="android:selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <!-- // Activity Themeing // -->
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Detail" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- // Material Component Theme's // -->
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/AppTheme.TextAppearance.Toolbar.Title</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/AppTheme.TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/AppTheme.TextAppearance.BottomNavigationView</item>
+    </style>
+
+    <style name="AppTheme.Chip.Action" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Chip.Action</item>
+        <item name="chipBackgroundColor">@drawable/states_chip_background</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="chipStrokeColor">@color/colorAccent</item>
+        <item name="rippleColor">@color/colorControlHighlight</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconEnabled">false</item>
+        <item name="checkedIcon">@null</item>
+        <item name="android:checkable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- // Text Appearance // -->
+
+    <style name="AppTheme.TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">@font/titillium_bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/titillium_regular</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/titillium_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <!-- Component Text Appearance -->
+
+    <style name="AppTheme.TextAppearance.BottomNavigationView" parent="TextAppearance.MaterialComponents.BottomNavigationView">
+        <item name="android:fontFamily">@font/titillium_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.BottomNavigationView.Active">
+        <item name="android:fontFamily">@font/titillium_bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Chip.Action" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:fontFamily">@font/titillium_bold</item>
+    </style>
+
+</resources>

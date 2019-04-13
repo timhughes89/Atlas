@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#15418c</color>
+    <color name="colorPrimaryDark">#15418c</color>
+    <color name="colorAccent">#FC3D21</color>
+    <color name="colorAccentTranslucent">#20FC3D21</color>
+    <color name="colorControlHighlight">@color/colorAccentTranslucent</color>
+
+    <color name="colorAccent60">#60FC3D21</color>
+    <color name="colorGrey80">#80000000</color>
+    <color name="colorGrey20">#20000000</color>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_stories"
+        android:title="@string/action_stories"
+        android:icon="@drawable/ic_story"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_launch"
+        android:title="@string/action_missions"
+        android:icon="@drawable/ic_rocket"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/action_photos"
+        android:title="@string/action_photo"
+        android:icon="@drawable/ic_photo"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+</menu>

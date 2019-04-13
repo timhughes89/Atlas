@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General dimens -->
+    <dimen name="scroll_distance">300dp</dimen>
+
+    <!-- Spacing dimens -->
+    <dimen name="unit_x1">8dp</dimen>
+    <dimen name="unit_x2">16dp</dimen>
+    <dimen name="unit_x3">24dp</dimen>
+    <dimen name="unit_x4">32dp</dimen>
+    <dimen name="unit_x5">40dp</dimen>
+    <dimen name="unit_x6">48dp</dimen>
+    <dimen name="unit_x7">56dp</dimen>
+    <dimen name="unit_x8">64dp</dimen>
+</resources>
