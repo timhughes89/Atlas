@@ -5,6 +5,7 @@
 
     <!-- Transition Strings -->
     <string name="POTD_image_transition">photoOfTheDayTransition</string>
+    <string name="transition_name">Shared Element Transition</string>
 
     <!-- Example Data -->
     <string name="example_date">01 February 2018</string>
@@ -17,6 +18,13 @@
     <string name="action_photo">Photos</string>
     <string name="action_news">News</string>
     <string name="action_stories">Stories</string>
+
+    <!-- Placeholder strings -->
+    <string name="planet_desc_placeholder">The fourth planet from the Sun, Mars is a dusty, cold, desert world with a very thin atmosphere. This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons and weather.
+
+NASA\'s Opportunity Rover Mission on Mars Comes to End Mars is one of the most explored bodies in our solar system, and it\'s the only planet where we\'ve sent rovers to roam the alien landscape.
+
+These robotic explorers have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.</string>
 
     <!-- App General Setting Preferences -->
     <string name="pref_header_general_settings">General Settings</string>
@@ -109,6 +117,18 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
     <string name="pref_title_vibrate">Vibrate</string>
+
+    <!-- Content Descriptions -->
+    <string name="content_description_planet_image">Planet Image</string>
+    <string name="content_description_mission_image">Mission Image</string>
+    <string name="mission_image_transition">Mission Image Transition</string>
+    <string name="planet_title_placeholder">Planet Title</string>
+    <string name="distance_from_sun_label">Distance from sun</string>
+    <string name="orbital_period_label">Orbital period</string>
+    <string name="action_discover">Discover</string>
+    <string name="planet_type_label">Planet Type</string>
+    <string name="planet_moon_label">Moons</string>
+    <string name="potd_content_description">Photo of the day</string>
 
 
 </resources>

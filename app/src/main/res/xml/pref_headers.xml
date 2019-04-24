@@ -4,17 +4,17 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.timsimonhughes.atlas.ui.controller.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="com.timsimonhughes.atlas.ui.activities.SettingsActivity$GeneralPreferenceFragment"
         android:icon="@drawable/ic_info"
         android:title="@string/pref_header_general" />
 
     <header
-        android:fragment="com.timsimonhughes.atlas.ui.controller.SettingsActivity$NotificationPreferenceFragment"
+        android:fragment="com.timsimonhughes.atlas.ui.activities.SettingsActivity$NotificationPreferenceFragment"
         android:icon="@drawable/ic_notifications"
         android:title="@string/pref_header_notifications" />
 
     <header
-        android:fragment="com.timsimonhughes.atlas.ui.controller.SettingsActivity$DataSyncPreferenceFragment"
+        android:fragment="com.timsimonhughes.atlas.ui.activities.SettingsActivity$DataSyncPreferenceFragment"
         android:icon="@drawable/ic_sync"
         android:title="@string/pref_header_account" />
 

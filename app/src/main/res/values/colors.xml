@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#15418c</color>
-    <color name="colorPrimaryDark">#15418c</color>
+    <color name="colorPrimary">#101010</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FC3D21</color>
+
+    <color name="colorPrimaryLight">#272727</color>
+    <color name="colorBorder">#606060</color>
+
     <color name="colorAccentTranslucent">#20FC3D21</color>
     <color name="colorControlHighlight">@color/colorAccentTranslucent</color>
 
     <color name="colorAccent60">#60FC3D21</color>
     <color name="colorGrey80">#80000000</color>
     <color name="colorGrey20">#20000000</color>
+
+    <color name="colorBackgroundGreyDark">#202124</color>
+    <color name="colorBackgroundGreyLight">#323639</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite60">#60FFFFFF</color>
+    <color name="colorWhite20">#20FFFFFF</color>
+
+
+    <color name="stateActive">@color/colorWhite</color>
+    <color name="stateInactive">@color/colorWhite60</color>
 </resources>

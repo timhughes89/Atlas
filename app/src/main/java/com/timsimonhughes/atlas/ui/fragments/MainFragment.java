@@ -17,9 +17,9 @@ import android.view.ViewGroup;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.timsimonhughes.atlas.ui.adapters.FragmentPagerAdapter;
-import com.timsimonhughes.atlas.ui.controller.SettingsActivity;
+import com.timsimonhughes.atlas.ui.activities.SettingsActivity;
 import com.timsimonhughes.atlas.R;
-import com.timsimonhughes.atlas.ui.controller.MainActivity;
+import com.timsimonhughes.atlas.ui.activities.MainActivity;
 
 
 import androidx.viewpager.widget.ViewPager;
@@ -40,7 +40,7 @@ public class MainFragment extends Fragment  {
                     viewPager.setCurrentItem(0);
 //                    mToolbar.setTitle(getResources().getString(R.string.fragment_1_label));
                     return true;
-                case R.id.action_launch:
+                case R.id.action_discover:
                     viewPager.setCurrentItem(1);
 //                    mToolbar.setTitle(getResources().getString(R.string.fragment_2_label));
                     return true;
@@ -60,22 +60,13 @@ public class MainFragment extends Fragment  {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-//        if (getActivity()!= null) {
-//            getActivity().getWindow().setFlags(
-//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-//                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        }
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.frag_main, container, false);
-
         initUI();
-
-
         return view;
     }
 
@@ -113,9 +104,6 @@ public class MainFragment extends Fragment  {
             public void onPageSelected(int position) {
                 viewPager.setCurrentItem(position);
                 bottomNavigationView.getMenu().getItem(position).setChecked(true);
-
-//                String title = getPageTitle(position);
-//                mToolbar.setTitle(title);
             }
 
             @Override
@@ -123,7 +111,6 @@ public class MainFragment extends Fragment  {
             }
         });
     }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

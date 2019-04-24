@@ -16,7 +16,7 @@ import com.timsimonhughes.atlas.model.POTD
 import com.timsimonhughes.atlas.network.ApiConfig
 import com.timsimonhughes.atlas.network.NasaPotdService
 import com.timsimonhughes.atlas.network.RetrofitClientInstance
-import com.timsimonhughes.atlas.ui.OnItemClickListener
+import com.timsimonhughes.atlas.ui.listeners.POTDOnItemClickListener
 import com.timsimonhughes.atlas.ui.adapters.POTDAdapter
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,8 +25,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class PhotoFragment : Fragment(), OnItemClickListener {
-
+class PhotoFragment : Fragment(), POTDOnItemClickListener {
 
     private val MOVE_DEFAULT_TIME: Long = 1000
     private val FADE_DEFAULT_TIME: Long = 300

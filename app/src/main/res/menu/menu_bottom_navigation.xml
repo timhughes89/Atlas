@@ -11,9 +11,9 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_launch"
-        android:title="@string/action_missions"
-        android:icon="@drawable/ic_rocket"
+        android:id="@+id/action_discover"
+        android:title="@string/action_discover"
+        android:icon="@drawable/ic_explore"
         android:orderInCategory="100"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />

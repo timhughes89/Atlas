@@ -1,4 +1,4 @@
-package com.timsimonhughes.atlas.ui.controller
+package com.timsimonhughes.atlas.ui.activities
 
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate

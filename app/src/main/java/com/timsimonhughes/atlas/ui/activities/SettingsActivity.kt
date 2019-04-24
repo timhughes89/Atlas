@@ -1,4 +1,4 @@
-package com.timsimonhughes.atlas.ui.controller
+package com.timsimonhughes.atlas.ui.activities
 
 import android.os.Bundle
 

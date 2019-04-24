@@ -12,4 +12,5 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
     companion object {
         val settingsPreferenceFragment = SettingsPreferenceFragment
     }
+
 }

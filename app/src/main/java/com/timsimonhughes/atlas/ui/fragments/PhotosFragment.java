@@ -8,15 +8,16 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.timsimonhughes.atlas.network.ApiConfig;
 import com.timsimonhughes.atlas.network.RetrofitClientInstance;
 import com.timsimonhughes.atlas.Constants;
 import com.timsimonhughes.atlas.R;
 import com.timsimonhughes.atlas.model.POTD;
 import com.timsimonhughes.atlas.network.NasaPotdService;
-import com.timsimonhughes.atlas.ui.OnItemClickListener;
+import com.timsimonhughes.atlas.ui.listeners.POTDOnItemClickListener;
 import com.timsimonhughes.atlas.ui.adapters.POTDAdapter;
-import com.timsimonhughes.atlas.ui.controller.MainActivity;
+import com.timsimonhughes.atlas.ui.activities.MainActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -37,21 +38,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PhotosFragment extends Fragment implements OnItemClickListener {
+public class PhotosFragment extends Fragment implements POTDOnItemClickListener {
 
     private List<POTD> POTDList = new ArrayList<>();
     private ProgressBar progressBar;
     private RecyclerView recyclerview;
     private String endDate, startDate;
+    private View view;
 
     public PhotosFragment() {
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_photos, container, false);
+        view = inflater.inflate(R.layout.frag_photos, container, false);
         initUI(view);
         getDateRange();
         fetchPhotoOfDay();
@@ -91,13 +92,13 @@ public class PhotosFragment extends Fragment implements OnItemClickListener {
 
             @Override
             public void onFailure(Call<List<POTD>> call, Throwable t) {
-//                showErrorSnackBar()
+                showErrorSnackBar();
             }
         });
     }
 
     private void showErrorSnackBar() {
-//        Snackbar.make(,"", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(view,"There was an network error", Snackbar.LENGTH_LONG).show();
     }
 
     private void updateAdapter(List<POTD> potdList) {

@@ -11,16 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.timsimonhughes.atlas.ui.controller.SettingsActivity"
+        <activity android:name="com.timsimonhughes.atlas.ui.activities.SettingsActivity"
             android:label="Settings"
-            android:parentActivityName="com.timsimonhughes.atlas.ui.controller.MainActivity">
+            android:parentActivityName="com.timsimonhughes.atlas.ui.activities.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.timsimonhughes.atlas.ui.controller.MainActivity"/>
+                android:value="com.timsimonhughes.atlas.ui.activities.MainActivity"/>
         </activity>
 
-        <activity android:name="com.timsimonhughes.atlas.ui.controller.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="com.timsimonhughes.atlas.ui.activities.MainActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

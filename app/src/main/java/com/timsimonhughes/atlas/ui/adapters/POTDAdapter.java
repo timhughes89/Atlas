@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.timsimonhughes.atlas.model.POTD;
-import com.timsimonhughes.atlas.ui.OnItemClickListener;
+import com.timsimonhughes.atlas.ui.listeners.POTDOnItemClickListener;
 import com.timsimonhughes.atlas.utils.POTDUtils;
 import com.timsimonhughes.atlas.R;
 
@@ -21,14 +21,14 @@ public class POTDAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context mContext;
     private List<POTD> PODList;
-    private OnItemClickListener onItemClickListener;
+    private POTDOnItemClickListener onItemClickListener;
 
     public POTDAdapter(Context context, List<POTD> podList) {
         this.mContext = context;
         this.PODList = podList;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(POTDOnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -53,7 +53,7 @@ public class POTDAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         String formattedDate = POTDUtils.formatDate(potd.getDate());
 
-        holder.textViewPOTDTitle.setText(potd.getTitle());
+//        holder.textViewPOTDTitle.setText(potd.getTitle());
         holder.textViewPOTDDate.setText(formattedDate);
         holder.textViewPOTDExplanation.setText(potd.getExplanation());
 
@@ -87,7 +87,7 @@ public class POTDAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
 
             imageViewPOTD = itemView.findViewById(R.id.image_view_potd);
-            textViewPOTDTitle = itemView.findViewById(R.id.text_view_title);
+//            textViewPOTDTitle = itemView.findViewById(R.id.text_view_title);
             textViewPOTDDate = itemView.findViewById(R.id.text_view_date);
             textViewPOTDExplanation = itemView.findViewById(R.id.text_view_explanation);
         }
