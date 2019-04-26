@@ -22,7 +22,7 @@
 
     <include
         android:id="@+id/toolbar_detail"
-        layout="@layout/toolbar_transparent"
+        layout="@layout/view_toolbar_transparent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"

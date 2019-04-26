@@ -16,7 +16,7 @@
 
     <!--<include-->
         <!--android:id="@+id/chip_group"-->
-        <!--layout="@layout/chip_group_layout"-->
+        <!--layout="@layout/view_chip_group_layout"-->
         <!--android:layout_width="0dp"-->
         <!--android:layout_height="wrap_content"-->
         <!--app:layout_constraintEnd_toEndOf="parent"-->
@@ -25,7 +25,7 @@
 
     <!--<include-->
         <!--android:id="@+id/recycler_view_potd"-->
-        <!--layout="@layout/recycler_view"-->
+        <!--layout="@layout/view_recycler_view"-->
         <!--android:layout_width="0dp"-->
         <!--android:layout_height="0dp"-->
         <!--android:visibility="visible"-->
