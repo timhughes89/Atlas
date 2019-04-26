@@ -129,6 +129,8 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
     <string name="planet_type_label">Planet Type</string>
     <string name="planet_moon_label">Moons</string>
     <string name="potd_content_description">Photo of the day</string>
+    <string name="next_button_content_description">Next Button</string>
+    <string name="previous_button_content_description">Previous Button</string>
 
 
 </resources>

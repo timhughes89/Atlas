@@ -43,7 +43,7 @@ public class MissionsFragment extends Fragment implements PlanetItemClickListene
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_missions, container, false);
+        View view = inflater.inflate(R.layout.frag_discover, container, false);
         return view;
     }
 

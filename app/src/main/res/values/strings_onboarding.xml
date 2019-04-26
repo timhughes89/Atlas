@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="onboarding_fragment_titles">
+        <item>Onboarding 1</item>
+        <item>Onboarding 2</item>
+        <item>Onboarding 3</item>
+    </string-array>
+
+    <string-array name="onboarding_fragment_descriptions">
+        <item>Onboarding Description 1</item>
+        <item>Onboarding Description 2</item>
+        <item>Onboarding Description 3</item>
+    </string-array>
+</resources>

@@ -92,6 +92,7 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
 
             @Override
             public void onFailure(Call<List<POTD>> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
                 showErrorSnackBar();
             }
         });

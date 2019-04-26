@@ -22,6 +22,4 @@ public class POTDUtils {
         }
         return formattedDate;
     }
-
-
 }
