@@ -4,53 +4,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@android:color/black">
 
     <ImageView
         android:id="@+id/image_view_onboarding"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         app:layout_constraintBottom_toTopOf="@+id/text_view_onboarding_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        tools:srcCompat="@drawable/example_image_2" />
 
     <TextView
         android:id="@+id/text_view_onboarding_title"
         style="@style/AppTheme.TextAppearance.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        tools:text="Title"
+        android:layout_marginEnd="32dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/text_view_onboarding_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_onboarding"
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/text_view_onboarding_description"
         style="@style/AppTheme.TextAppearance.Body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        tools:text="@string/planet_desc_placeholder"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:textAlignment="center"
+        android:textColor="@color/colorWhite60"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_onboarding_title" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_onboarding_title"
+        tools:text="@string/planet_desc_placeholder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

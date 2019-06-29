@@ -14,6 +14,8 @@ import android.view.View.OnLongClickListener;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import com.timsimonhughes.atlas.R;
+
 import androidx.annotation.Nullable;
 
 public class PlanetOrbitView extends View implements OnClickListener, OnLongClickListener {
@@ -27,7 +29,9 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
     private static final int ORBIT_COLOR = Color.argb(20, 220, 220, 220);
     private static final int PLANET_COLOR = Color.argb(255, 255, 255, 255);
     private static final int LABEL_COLOR = Color.argb(255, 255, 255, 255);
-    private static final int SUN_COLOR = Color.YELLOW;
+
+    private int sunColor;
+    private int mBackgroundColor;
 
     private static final int ORBIT_STROKE_WIDTH = 10;
 
@@ -37,8 +41,8 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
     // angular increment for orbit straight-line segment
     private static final float dphi = (float) (2 * Math.PI / (float) numpoints);
     private static final double THIRD = 1.0 / 3.0;
-    private static final int planetRadius = 7;         // radius of spherical planet (pixels)
-    private static final int sunRadius = 12;            // radius of sun (pixels)
+    private static final int planetRadius = 10;         // radius of spherical planet (pixels)
+    private static final int sunRadius = 20;            // radius of sun (pixels)
     private static final float X0 = 0;                 // x offset from center (pixels)
     private static final float Y0 = 0;                 // y offset from center (pixels)
     private static final double direction = -1;        // Orbit direction: counter-clockwise -1; clockwise +1
@@ -59,6 +63,8 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
       computational efficiency. */
 
     private static final String planetName[] = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "2008 VB4", "2009 FG", "Halley"};
+    private static final int planetOrbitColors[] = {R.color.colorAccent, };
+
     private static final double epsilon[] = {0.206, 0.007, 0.017, 0.093, 0.048, 0.056, 0.047, 0.009, 0.248, 0.617, 0.529, 0.967};
     private static final double a[] = {0.387, 0.723, 1.0, 1.524, 5.203, 9.54, 19.18, 30.06, 39.53, 2.35, 1.97, 17.83};
     private static final double period[] = {0.241, 0.615, 1.0, 1.881, 11.86, 29.46, 84.01, 164.8, 248.5, 3.61, 2.76, 75.32};
@@ -123,6 +129,9 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
         c2 = new double[numObjects];
         dt = 1 / (double) numSteps;
 
+        sunColor = getContext().getColor(R.color.colorSun);
+        mBackgroundColor = getContext().getColor(R.color.colorAccent);
+
         // Add click and long click listeners
         setOnClickListener(this);
         setOnLongClickListener(this);
@@ -131,7 +140,13 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
             theta[i] = -direction * theta0[i];
         }
 
-        // Define the planet as circular shape
+//        // Define the planet as circular shape
+//        for (int i = 0; i < numObjects; i++) {
+//            planet = new ShapeDrawable(new OvalShape());
+//            planet.
+//        }
+
+//        Define the planet as circular shape
         planet = new ShapeDrawable(new OvalShape());
         planet.getPaint().setColor(PLANET_COLOR);
         planet.setBounds(0, 0, 2 * planetRadius, 2 * planetRadius);
@@ -332,7 +347,7 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
     private void drawBackground(Paint paint, Canvas canvas) {
 
         // Draw the Sun
-        paint.setColor(SUN_COLOR);
+        paint.setColor(sunColor);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(centerX, centerY, sunRadius, paint);
 

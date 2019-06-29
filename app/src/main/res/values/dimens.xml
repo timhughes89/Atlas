@@ -12,4 +12,5 @@
     <dimen name="unit_x6">48dp</dimen>
     <dimen name="unit_x7">56dp</dimen>
     <dimen name="unit_x8">64dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
 </resources>

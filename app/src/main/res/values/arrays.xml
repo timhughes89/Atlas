@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="onboarding_fragment_images">
+        <item>@drawable/example_image_2</item>
+        <item>@drawable/example_image_2</item>
+        <item>@drawable/example_image_2</item>
+    </integer-array>
+
+    <string-array name="onboarding_fragment_titles">
+        <item>All the latest space related news</item>
+        <item>Explore our solar system</item>
+        <item>A new photo of the day, every day</item>
+    </string-array>
+
+    <string-array name="onboarding_fragment_descriptions">
+        <item>All the latest space related news direct from NASA. Stay up to date on all the latest developments as they happen.</item>
+        <item>Explore our solar system in all it’s glory, from the planet we all call home to our local planetary neighbours.</item>
+        <item>A brand new high resolution image from one of the NASA telescopes</item>
+    </string-array>
+</resources>

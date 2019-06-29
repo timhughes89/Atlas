@@ -10,6 +10,7 @@
     tools:showIn="@layout/frag_onboarding">
 
     <View
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/colorWhite20"
@@ -31,6 +32,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.timsimonhughes.atlas.ui.views.PageIndicatorView
+        android:id="@+id/page_indicator_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:circle_radius="4dp"
+        app:active_circle_color="@color/colorWhite"
+        app:inactive_circle_color="@color/colorWhite60"
+        app:distance_between_circles="8dp"
+        app:number_of_circles="3" />
 
     <ImageButton
         android:id="@+id/button_next"

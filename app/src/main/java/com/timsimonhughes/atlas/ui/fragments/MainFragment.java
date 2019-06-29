@@ -88,7 +88,7 @@ public class MainFragment extends Fragment  {
 
     private void initBottomNavigationView() {
         FragmentPagerAdapter viewPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager());
-        viewPagerAdapter.addFragment(new StoriesFragment());
+        viewPagerAdapter.addFragment(new NewsFragment());
         viewPagerAdapter.addFragment(new MissionsFragment());
         viewPagerAdapter.addFragment(new PhotosFragment());
         viewPager.setAdapter(viewPagerAdapter);

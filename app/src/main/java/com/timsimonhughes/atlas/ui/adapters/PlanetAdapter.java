@@ -53,7 +53,8 @@ public class PlanetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         ViewCompat.setTransitionName(holder.imageViewMission, context.getResources().getString(R.string.transition_name));
 
         ImageUtils.loadImage(context, missionImageUrl, holder.imageViewMission);
-        holder.itemView.setOnClickListener(v -> planetItemClickListener.onItemClick(holder.getAdapterPosition(), holder.imageViewMission, planet));
+        holder.itemView.setOnClickListener(v ->
+                planetItemClickListener.onItemClick(holder.getAdapterPosition(), holder.imageViewMission, planet));
     }
 
     @Override

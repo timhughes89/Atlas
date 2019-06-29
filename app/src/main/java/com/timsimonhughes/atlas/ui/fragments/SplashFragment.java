@@ -18,8 +18,6 @@ import androidx.fragment.app.FragmentManager;
 
 public class SplashFragment extends Fragment {
 
-    private FragmentManager fragmentManager;
-
     public SplashFragment() {
     }
 
@@ -37,28 +35,28 @@ public class SplashFragment extends Fragment {
     }
 
     private void delayLoad() {
-        new Handler().postDelayed(() -> {
-            loadFragment();
-        }, 3000);
+        new Handler().postDelayed(() -> loadFragment(), 3000);
     }
 
     private void loadFragment() {
 
-        fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
 
         if (getContext() != null) {
             SharedPreferences sharedPreferences = getContext().getSharedPreferences(Constants.PACKAGE_NAME, Context.MODE_PRIVATE);
-            if (sharedPreferences.contains(Constants.FIRST_RUN)) {
-                fragmentManager.beginTransaction()
-                        .setCustomAnimations(R.anim.fade_slide_in, R.anim.fade_slide_out)
-                        .replace(R.id.container, new MainFragment())
-                        .commit();
-            } else {
-                sharedPreferences.edit().putString(Constants.FIRST_RUN, "first_run").apply();
-                fragmentManager.beginTransaction()
-                        .setCustomAnimations(R.anim.fade_slide_in, R.anim.fade_slide_out)
-                        .replace(R.id.container, new OnboardingFragment())
-                        .commit();
+            if (fragmentManager != null) {
+                if (sharedPreferences.contains(Constants.FIRST_RUN)) {
+                    fragmentManager.beginTransaction()
+                            .setCustomAnimations(R.anim.view_animation_fade_slide_in, R.anim.view_animation_fade_slide_out)
+                            .replace(R.id.container, new MainFragment())
+                            .commit();
+                } else {
+                    sharedPreferences.edit().putString(Constants.FIRST_RUN, "first_run").apply();
+                    fragmentManager.beginTransaction()
+                            .setCustomAnimations(R.anim.view_animation_fade_slide_in, R.anim.view_animation_fade_slide_out)
+                            .replace(R.id.container, new OnboardingFragment())
+                            .commit();
+                }
             }
         }
     }

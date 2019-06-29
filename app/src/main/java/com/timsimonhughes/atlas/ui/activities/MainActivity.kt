@@ -1,44 +1,36 @@
 package com.timsimonhughes.atlas.ui.activities
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
-
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.widget.Toast
-import com.timsimonhughes.atlas.Constants
-import com.timsimonhughes.atlas.R
-
-import com.timsimonhughes.atlas.ui.fragments.MainFragment
-import com.timsimonhughes.atlas.ui.fragments.OnboardingFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.timsimonhughes.atlas.NetworkConnectivityReceiver
 import com.timsimonhughes.atlas.ui.fragments.SplashFragment
+import com.google.android.material.snackbar.Snackbar
+import com.timsimonhughes.atlas.BaseApplication
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NetworkConnectivityReceiver.ConnectivityReceiverListener {
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.timsimonhughes.atlas.R.layout.activity_main)
+
+        // Manually check internet connection
+        checkConnection()
 
         val fragmentManager = supportFragmentManager
-        val sharedPreferences = getSharedPreferences(Constants.PACKAGE_NAME, Context.MODE_PRIVATE)
-
-        fragmentManager.beginTransaction().add(R.id.container, SplashFragment()).commit()
-
-//        if (sharedPreferences.contains(Constants.FIRST_RUN)) {
-//            fragmentManager?.beginTransaction()?.add(R.id.container, MainFragment())?.commit()
-//        } else {
-//            sharedPreferences.edit().putString(Constants.FIRST_RUN, "first_run").apply()
-//            fragmentManager?.beginTransaction()?.add(R.id.container, OnboardingFragment())?.commit()
-//        }
+        fragmentManager.beginTransaction().add(com.timsimonhughes.atlas.R.id.container, SplashFragment()).commit()
 
         // Sets default values only once, first time this is called. The third
         // argument is a boolean that indicates whether the default values
         // should be set more than once. When false, the system sets the default
         // values only the first time it is called.
-        PreferenceManager.setDefaultValues(this, R.xml.pref_general, false)
-        PreferenceManager.setDefaultValues(this, R.xml.pref_notification, false)
-        PreferenceManager.setDefaultValues(this, R.xml.pref_account, false)
+        PreferenceManager.setDefaultValues(this, com.timsimonhughes.atlas.R.xml.pref_general, false)
+        PreferenceManager.setDefaultValues(this, com.timsimonhughes.atlas.R.xml.pref_notification, false)
+        PreferenceManager.setDefaultValues(this, com.timsimonhughes.atlas.R.xml.pref_account, false)
 
         // Read settings from the shared preferences and display a toast.
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
@@ -46,8 +38,36 @@ class MainActivity : AppCompatActivity() {
 //        displayToast(marketPref)
     }
 
+    private fun checkConnection() {
+        val isConnected = NetworkConnectivityReceiver.isConnected()
+        showSnack(isConnected)
+    }
+
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        showSnack(isConnected)
+    }
+
+    private fun showSnack(isConnected: Boolean) {
+        val message: String
+
+        if (isConnected) {
+            message = "Network connected"
+        } else {
+            message = "No internet connection"
+        }
+
+        val snackbar = Snackbar.make(container, message, Snackbar.LENGTH_LONG)
+        snackbar.show()
+
+    }
+
     private fun displayToast(message: String) {
         Toast.makeText(applicationContext, message,
                 Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        BaseApplication.getInstance().setConnectivityListener(this)
     }
 }

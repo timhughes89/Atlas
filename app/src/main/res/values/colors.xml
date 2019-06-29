@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- General Colors -->
     <color name="colorPrimary">#101010</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FC3D21</color>
@@ -21,7 +22,18 @@
     <color name="colorWhite60">#60FFFFFF</color>
     <color name="colorWhite20">#20FFFFFF</color>
 
-
     <color name="stateActive">@color/colorWhite</color>
     <color name="stateInactive">@color/colorWhite60</color>
+
+    <!-- Planet Colors -->
+    <color name="colorSun">#FFF6D5</color>
+    <color name="colorPlanetMercury">#A9A698</color>
+    <color name="colorPlanetVenus">#737782</color>
+    <color name="colorPlanetEarth">#6E75A0</color>
+    <color name="colorPlanetMars">#D36540</color>
+    <color name="colorPlanetJupiter">#E8B28E</color>
+    <color name="colorPlanetSaturn">#D0A673</color>
+    <color name="colorPlanetUranus">#D1E7E9</color>
+    <color name="colorPlanetNeptune">#6491DA</color>
+
 </resources>

@@ -29,6 +29,7 @@ class PhotoFragment : Fragment(), POTDOnItemClickListener {
 
     private val MOVE_DEFAULT_TIME: Long = 1000
     private val FADE_DEFAULT_TIME: Long = 300
+    private val cacheSize = 10 * 1024 * 1024
 
     private val TAG = MainFragment::class.java.simpleName
 
@@ -70,7 +71,7 @@ class PhotoFragment : Fragment(), POTDOnItemClickListener {
     }
 
     private fun fetchPhotoOfDay() {
-        val service = RetrofitClientInstance.getRetrofitInstance().create(NasaPotdService::class.java)
+        val service = RetrofitClientInstance.getRetrofitInstance(context, cacheSize).create(NasaPotdService::class.java)
         val dateRangeCall = service.getPOTDByDateRange("2019-04-01", "2019-04-12", ApiConfig.API_KEY)
         dateRangeCall.enqueue(object : Callback<List<POTD>> {
             override fun onResponse(call: Call<List<POTD>>, response: Response<List<POTD>>) {

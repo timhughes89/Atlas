@@ -157,7 +157,7 @@ public class MissionsFragment extends Fragment implements PlanetItemClickListene
 
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.addSharedElement(sharedView, transitionName);
-                fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                fragmentTransaction.setCustomAnimations(R.anim.view_animation_fade_in, R.anim.view_animation_fade_out, R.anim.view_animation_fade_in, R.anim.view_animation_fade_out);
                 fragmentTransaction.addToBackStack("");
                 fragmentTransaction.replace(R.id.container, missionsDetailFragment);
                 fragmentTransaction.commit();

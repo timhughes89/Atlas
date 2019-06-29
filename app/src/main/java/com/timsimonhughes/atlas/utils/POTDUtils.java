@@ -1,5 +1,7 @@
 package com.timsimonhughes.atlas.utils;
 
+import com.timsimonhughes.atlas.Constants;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,8 +9,8 @@ import java.util.Locale;
 
 public class POTDUtils {
 
-    private static SimpleDateFormat utcFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-    private static SimpleDateFormat dateFormatter = new SimpleDateFormat("dd MMMM yy", Locale.getDefault());
+    private static SimpleDateFormat utcFormatter = new SimpleDateFormat(Constants.UTC_FORMAT, Locale.getDefault());
+    private static SimpleDateFormat dateFormatter = new SimpleDateFormat(Constants.DATE_FORMAT, Locale.getDefault());
 
     public static String formatDate(String unformattedDate) {
         String formattedDate = null;

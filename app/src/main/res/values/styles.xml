@@ -82,11 +82,22 @@
         <item name="fontFamily">@font/titillium_regular</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.SubTitle" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/titillium_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
     <style name="AppTheme.TextAppearance.Body" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/titillium_regular</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
         <!--<item name="android:letterSpacing">0.2</item>-->
+    </style>
+
+    <style name="AppTheme.TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/titillium_regular</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -97,11 +108,11 @@
 
     <!-- Component Text Appearance -->
 
-    <style name="AppTheme.TextAppearance.BottomNavigationView" parent="TextAppearance.MaterialComponents.BottomNavigationView">
+    <style name="AppTheme.TextAppearance.BottomNavigationView" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/titillium_regular</item>
     </style>
 
-    <style name="AppTheme.TextAppearance.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.BottomNavigationView.Active">
+    <style name="AppTheme.TextAppearance.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/titillium_regular</item>
     </style>
 

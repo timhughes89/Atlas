@@ -5,10 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.timsimonhughes.atlas.R;
-import com.timsimonhughes.atlas.ui.adapters.OnboardingPagerAdapter;
+import com.timsimonhughes.atlas.ui.OnboardingPageTransformer;
+import com.timsimonhughes.atlas.ui.adapters.OnboardingFragmentPagerAdapter;
+import com.timsimonhughes.atlas.ui.views.PageIndicatorView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,12 +21,14 @@ public class OnboardingFragment extends Fragment {
     private View view;
     private ViewPager onboardingViewPager;
     private ImageButton imageButtonPrevious, imageButtonNext;
-    private OnboardingPagerAdapter onboardingPagerAdapter;
+    private OnboardingFragmentPagerAdapter onboardingPagerAdapter;
     private int pagePosition = 0;
     private int pageCount;
+    private PageIndicatorView pageIndicatorView;
+    private OnboardingPageTransformer onboardingPageTransformer;
 
-
-    public OnboardingFragment(){}
+    public OnboardingFragment() {
+    }
 
     @Nullable
     @Override
@@ -46,12 +49,22 @@ public class OnboardingFragment extends Fragment {
         imageButtonNext = view.findViewById(R.id.button_next);
         imageButtonPrevious = view.findViewById(R.id.button_previous);
         imageButtonPrevious.setVisibility(View.INVISIBLE);
+        pageIndicatorView = view.findViewById(R.id.page_indicator_view);
         onboardingViewPager = view.findViewById(R.id.view_pager_onboarding);
+
     }
 
     private void setAdapter() {
-        onboardingPagerAdapter = new OnboardingPagerAdapter(getContext());
+        onboardingPagerAdapter = new OnboardingFragmentPagerAdapter(getChildFragmentManager());
+        onboardingPagerAdapter.addFragment(new OnboardingFragmentNews());
+        onboardingPagerAdapter.addFragment(new OnboardingFragmentDiscover());
+        onboardingPagerAdapter.addFragment(new OnboardingFragmentPhotos());
+        onboardingPageTransformer = new OnboardingPageTransformer();
+        onboardingViewPager.setPageTransformer(false, onboardingPageTransformer);
         onboardingViewPager.setAdapter(onboardingPagerAdapter);
+
+
+//        onboardingViewPager.setAdapter(onboardingPagerAdapter);
         onboardingViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -62,6 +75,7 @@ public class OnboardingFragment extends Fragment {
             public void onPageSelected(int position) {
                 pagePosition = position;
                 onboardingViewPager.setCurrentItem(pagePosition);
+                pageIndicatorView.setCurrentIndex(pagePosition);
 
                 if (pagePosition == 0) {
                     imageButtonNext.setVisibility(View.VISIBLE);
@@ -84,12 +98,13 @@ public class OnboardingFragment extends Fragment {
 
         imageButtonNext.setOnClickListener(v -> {
             if (pagePosition < pageCount - 1) {
-                pagePosition ++;
+                pagePosition++;
                 onboardingViewPager.setCurrentItem(pagePosition, true);
+                pageIndicatorView.setCurrentIndex(pagePosition);
             } else {
                 if (getFragmentManager() != null) {
                     getFragmentManager().beginTransaction()
-                            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+                            .setCustomAnimations(R.anim.view_animation_fade_in, R.anim.view_animation_fade_out)
                             .replace(R.id.container, new MainFragment())
                             .commit();
                 }
@@ -100,6 +115,7 @@ public class OnboardingFragment extends Fragment {
             if (pagePosition != 0) {
                 pagePosition -= 1;
                 onboardingViewPager.setCurrentItem(pagePosition, true);
+                pageIndicatorView.setCurrentIndex(pagePosition);
             } else {
                 imageButtonPrevious.setVisibility(View.INVISIBLE);
             }

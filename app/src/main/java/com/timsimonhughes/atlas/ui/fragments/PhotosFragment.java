@@ -1,5 +1,6 @@
 package com.timsimonhughes.atlas.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,24 +9,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 
-import com.google.android.material.snackbar.Snackbar;
-import com.timsimonhughes.atlas.network.ApiConfig;
-import com.timsimonhughes.atlas.network.RetrofitClientInstance;
-import com.timsimonhughes.atlas.Constants;
-import com.timsimonhughes.atlas.R;
-import com.timsimonhughes.atlas.model.POTD;
-import com.timsimonhughes.atlas.network.NasaPotdService;
-import com.timsimonhughes.atlas.ui.listeners.POTDOnItemClickListener;
-import com.timsimonhughes.atlas.ui.adapters.POTDAdapter;
-import com.timsimonhughes.atlas.ui.activities.MainActivity;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -33,6 +16,24 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.timsimonhughes.atlas.Constants;
+import com.timsimonhughes.atlas.R;
+import com.timsimonhughes.atlas.model.POTD;
+import com.timsimonhughes.atlas.network.ApiConfig;
+import com.timsimonhughes.atlas.network.NasaPotdService;
+import com.timsimonhughes.atlas.network.RetrofitClientInstance;
+import com.timsimonhughes.atlas.ui.activities.MainActivity;
+import com.timsimonhughes.atlas.ui.adapters.POTDAdapter;
+import com.timsimonhughes.atlas.ui.listeners.POTDOnItemClickListener;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,6 +46,7 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
     private RecyclerView recyclerview;
     private String endDate, startDate;
     private View view;
+    private int cacheSize = 10 * 1024 * 1024;
 
     public PhotosFragment() {
     }
@@ -78,28 +80,31 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
     }
 
     private void fetchPhotoOfDay() {
-        NasaPotdService nasaPotdService = RetrofitClientInstance.getRetrofitInstance().create(NasaPotdService.class);
-        Call<List<POTD>> call = nasaPotdService.getPOTDByDateRange(startDate, endDate, ApiConfig.API_KEY);
-        call.enqueue(new Callback<List<POTD>>() {
-            @Override
-            public void onResponse(Call<List<POTD>> call, Response<List<POTD>> response) {
-                if (response.body() != null) {
-                    POTDList = response.body();
-                    progressBar.setVisibility(View.GONE);
-                    updateAdapter(POTDList);
+        Context context = getContext();
+        if (context != null) {
+            NasaPotdService nasaPotdService = RetrofitClientInstance.getRetrofitInstance(context, cacheSize).create(NasaPotdService.class);
+            Call<List<POTD>> call = nasaPotdService.getPOTDByDateRange(startDate, endDate, ApiConfig.API_KEY);
+            call.enqueue(new Callback<List<POTD>>() {
+                @Override
+                public void onResponse(Call<List<POTD>> call, Response<List<POTD>> response) {
+                    if (response.body() != null) {
+                        POTDList = response.body();
+                        progressBar.setVisibility(View.GONE);
+                        updateAdapter(POTDList);
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<List<POTD>> call, Throwable t) {
-                progressBar.setVisibility(View.GONE);
-                showErrorSnackBar();
-            }
-        });
+                @Override
+                public void onFailure(Call<List<POTD>> call, Throwable t) {
+                    progressBar.setVisibility(View.GONE);
+//                showErrorSnackBar();
+                }
+            });
+        }
     }
 
     private void showErrorSnackBar() {
-        Snackbar.make(view,"There was an network error", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(view, "There was an network error", Snackbar.LENGTH_LONG).show();
     }
 
     private void updateAdapter(List<POTD> potdList) {
@@ -120,7 +125,7 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
 
             MainActivity mainActivity = (MainActivity) getActivity();
 
-            if (mainActivity != null)  {
+            if (mainActivity != null) {
                 FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
 
                 String transitionName = sharedView.getTransitionName();

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.bottomnavigation.BottomNavigationView
+<com.google.android.material.bottomnavigation.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottom_navigation"
     style="@style/AppTheme.BottomNavigationView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="?attr/actionBarSize"
     android:layout_gravity="bottom"
-    android:background="@color/colorPrimary"
-    app:elevation="16dp"
+    android:background="@drawable/bottom_navigation_view_background"
+    app:elevation="8dp"
     app:itemIconTint="@drawable/states_bottom_navigation"
     app:itemTextColor="@drawable/states_bottom_navigation"
-    app:menu="@menu/menu_bottom_navigation"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" />
+    app:layout_keyline="@color/colorWhite"
+    app:menu="@menu/menu_bottom_navigation" />
