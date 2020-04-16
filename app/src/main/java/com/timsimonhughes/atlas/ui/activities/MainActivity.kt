@@ -7,13 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.timsimonhughes.atlas.NetworkConnectivityReceiver
 import com.timsimonhughes.atlas.ui.fragments.SplashFragment
 import com.google.android.material.snackbar.Snackbar
-import com.timsimonhughes.atlas.BaseApplication
+import com.timsimonhughes.atlas.AtlasApp
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), NetworkConnectivityReceiver.ConnectivityReceiverListener {
-    
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.timsimonhughes.atlas.R.layout.activity_main)
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity(), NetworkConnectivityReceiver.Connectivi
     }
 
     private fun checkConnection() {
-        val isConnected = NetworkConnectivityReceiver.isConnected()
+        val isConnected = NetworkConnectivityReceiver().isConnected()
         showSnack(isConnected)
     }
 
@@ -68,6 +66,7 @@ class MainActivity : AppCompatActivity(), NetworkConnectivityReceiver.Connectivi
 
     override fun onResume() {
         super.onResume()
-        BaseApplication.getInstance().setConnectivityListener(this)
+        AtlasApp().getInstance().setConnectivityListener(this)
+//        BaseApplication.getInstance().setConnectivityListener(this)
     }
 }
