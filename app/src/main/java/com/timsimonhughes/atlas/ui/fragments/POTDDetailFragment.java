@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -105,7 +107,7 @@ public class POTDDetailFragment extends Fragment {
 //        getActivity().getWindow().getDecorView().setSystemUiVisibility(););
     }
 
-        private void initToolbar() {
+    private void initToolbar() {
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
         if (appCompatActivity != null) {
             Toolbar detailToolbar = view.findViewById(R.id.toolbar_detail);
@@ -116,7 +118,7 @@ public class POTDDetailFragment extends Fragment {
                 appCompatActivity.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
             }
             detailToolbar.setNavigationOnClickListener(v -> {
-                if (getFragmentManager()!= null) {
+                if (getFragmentManager() != null) {
                     getFragmentManager().popBackStack();
                 }
             });
@@ -142,11 +144,11 @@ public class POTDDetailFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        switch (itemId) {
-            case R.id.action_favourite:
-                break;
-
-        }
+//        switch (itemId) {
+//            case R.id.action_favourite:
+//                break;
+//
+//        }
         return super.onOptionsItemSelected(item);
     }
 }

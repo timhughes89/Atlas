@@ -12,20 +12,26 @@ ext {
     retrofitVersion = "2.7.2"
     navigationFragmentVersion = "1.0.0"
     supportPreferenceVersion = "28.0.0"
+    moshiVersion = "1.9.2"
+    okHttpVersion = "4.3.1"
 
     appDependencies = [
-            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            lifecycle            : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
-            paging               : "androidx.paging:paging-runtime:$pagingVersion",
-            appCompat            : "androidx.appcompat:appcompat:$appCompatVersion",
-            materialComponents   : "com.google.android.material:material:$materialComponentsVersion",
-            palette              : "androidx.palette:palette:$paletteVersion",
-            glide                : "com.github.bumptech.glide:glide:$glideVersion",
-            constraintLayout     : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
-            retrofit             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            navigationFragment   : "android.arch.navigation:navigation-fragment:$navigationFragmentVersion",
-            supportPreference    : "com.android.support:preference-v7:$supportPreferenceVersion"
+            kotlin                   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            lifecycle                : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            paging                   : "androidx.paging:paging-runtime:$pagingVersion",
+            appCompat                : "androidx.appcompat:appcompat:$appCompatVersion",
+            materialComponents       : "com.google.android.material:material:$materialComponentsVersion",
+            palette                  : "androidx.palette:palette:$paletteVersion",
+            glide                    : "com.github.bumptech.glide:glide:$glideVersion",
+            constraintLayout         : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            retrofit                 : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitMoshiConverter   : "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            retrofitGsonConverter    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            okHttp                   : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            oktHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            navigationFragment       : "android.arch.navigation:navigation-fragment:$navigationFragmentVersion",
+            supportPreference        : "com.android.support:preference-v7:$supportPreferenceVersion",
+            moshi                    : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
     ]
 }
 

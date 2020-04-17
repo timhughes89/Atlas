@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.timsimonhughes.atlas.R;
+
 import com.timsimonhughes.atlas.model.Planet;
 import com.timsimonhughes.atlas.ui.listeners.PlanetItemClickListener;
 import com.timsimonhughes.atlas.utils.ImageUtils;
@@ -17,13 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class PlanetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Planet> plannetList;
     private Context context;
     private PlanetItemClickListener planetItemClickListener;
 
-    public PlanetAdapter(List<Planet> planets, Context context) {
+    public DiscoverAdapter(List<Planet> planets, Context context) {
         this.plannetList = planets;
         this.context = context;
     }
@@ -47,7 +48,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     private void bindMission(PlanetViewHolder holder, Planet planet, int position) {
-        String missionImageUrl = planet.getImage_url();
+        String missionImageUrl = planet.getImageUrl();
         String missionTitle = planet.getTitle();
 
         ViewCompat.setTransitionName(holder.imageViewMission, context.getResources().getString(R.string.transition_name));

@@ -82,7 +82,7 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
     private void fetchPhotoOfDay() {
         Context context = getContext();
         if (context != null) {
-            NasaPotdService nasaPotdService = RetrofitClientInstance.getRetrofitInstance(context, cacheSize).create(NasaPotdService.class);
+            NasaPotdService nasaPotdService = new RetrofitClientInstance().getRetrofitInstance(context, cacheSize).create(NasaPotdService.class);
             Call<List<POTD>> call = nasaPotdService.getPOTDByDateRange(startDate, endDate, ApiConfig.API_KEY);
             call.enqueue(new Callback<List<POTD>>() {
                 @Override
@@ -139,19 +139,5 @@ public class PhotosFragment extends Fragment implements POTDOnItemClickListener 
                 fragmentTransaction.commit();
             }
         }
-
-//        if (getParentFragment() != null) {
-//            fragmentManager = getParentFragment().getChildFragmentManager();
-//
-//            String transitionName = sharedView.getTransitionName();
-//            POTDDetailFragment potdDetailFragment = POTDDetailFragment.newInstance(potd, transitionName);
-//
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.setReorderingAllowed(true);
-//            fragmentTransaction.addSharedElement(sharedView, transitionName);
-//            fragmentTransaction.replace(R.id.container, potdDetailFragment);
-//            fragmentTransaction.commit();
-//        }
-
     }
 }

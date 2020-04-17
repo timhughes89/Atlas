@@ -19,12 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-public class MissionsDetailFragment extends Fragment {
+public class DiscoverDetailFragment extends Fragment {
 
     private PlanetOrbitView planetOrbitView;
 
-    static MissionsDetailFragment newInstance(Planet planet, String transitionName) {
-        MissionsDetailFragment missionsDetailFragment = new MissionsDetailFragment();
+    static DiscoverDetailFragment newInstance(Planet planet, String transitionName) {
+        DiscoverDetailFragment missionsDetailFragment = new DiscoverDetailFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable(Constants.MISSION_ITEM, planet);
         bundle.putString(Constants.MISSION_SHARED_ITEM_STRING, transitionName);
@@ -67,12 +67,12 @@ public class MissionsDetailFragment extends Fragment {
             String transitionName = getArguments().getString(Constants.MISSION_SHARED_ITEM_STRING);
 
             if (planet != null) {
-                String planetImageUrl = planet.getImage_url();
+                String planetImageUrl = planet.getImageUrl();
                 String planetTitle = planet.getTitle();
                 String planetOverview = planet.getOverview();
-                String planetDistanceSol = planet.getDistance_sol();
-                String planetOrbitalPeriod = planet.getOrbital_period();
-                String planetType = planet.getPlanet_type();
+                String planetDistanceSol = planet.getDistanceSol();
+                String planetOrbitalPeriod = planet.getOrbitalPeriod();
+                String planetType = planet.getPlanetType();
                 String planetMoons = planet.getMoons();
 
                 imageViewMissionDetail.setTransitionName(transitionName);

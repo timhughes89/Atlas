@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -26,6 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    def moshiVersion = "1.9.2"
 
     def dependencies = rootProject.appDependencies
     implementation dependencies.constraintLayout
@@ -34,11 +36,17 @@ dependencies {
     implementation dependencies.palette
     implementation dependencies.supportPreference
     implementation dependencies.retrofit
+    implementation dependencies.retrofitMoshiConverter
     implementation dependencies.retrofitGsonConverter
+    implementation dependencies.okHttp
+    implementation dependencies.oktHttpLoggingInterceptor
     implementation dependencies.glide
     implementation dependencies.lifecycle
     implementation dependencies.paging
     implementation dependencies.kotlin
     implementation dependencies.navigationFragment
+    implementation dependencies.moshi
 
+    // Moshi dependencies
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
 }

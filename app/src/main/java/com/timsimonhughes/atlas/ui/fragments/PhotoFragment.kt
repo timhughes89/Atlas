@@ -71,7 +71,7 @@ class PhotoFragment : Fragment(), POTDOnItemClickListener {
     }
 
     private fun fetchPhotoOfDay() {
-        val service = RetrofitClientInstance.getRetrofitInstance(context, cacheSize).create(NasaPotdService::class.java)
+        val service = RetrofitClientInstance().getRetrofitInstance(context, cacheSize).create(NasaPotdService::class.java)
         val dateRangeCall = service.getPOTDByDateRange("2019-04-01", "2019-04-12", ApiConfig.API_KEY)
         dateRangeCall.enqueue(object : Callback<List<POTD>> {
             override fun onResponse(call: Call<List<POTD>>, response: Response<List<POTD>>) {
@@ -101,110 +101,12 @@ class PhotoFragment : Fragment(), POTDOnItemClickListener {
     }
 
     override fun onItemClick(position: Int, sharedView: View?, potd: POTD?) {
-
         val fragmentManager = fragmentManager
-
-
         val transitionName = sharedView?.transitionName
-//        val potdFragment = POTDDetailFragment().newInstance(potd, transitionName)
 
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         fragmentTransaction.setReorderingAllowed(true)
         fragmentTransaction.addSharedElement(sharedView!!, transitionName!!)
-//        fragmentTransaction.replace(R.id.container, potdFragment)
         fragmentTransaction.commit()
-
-
     }
-
-//    override fun onItemClick(position: Int, sharedView: View, potd: POTD) {
-//
-//        val fragmentManager = fragmentManager
-//
-//        if (fragmentManager != null) {
-//            val transitionName = sharedView.transitionName
-//
-//            val previousFragment = fragmentManager.findFragmentById(R.id.container)
-//            val potdFragment = POTDDetailFragment().newInstance(potd, transitionName)
-//
-//            val fragmentTransaction = fragmentManager.beginTransaction()
-//            fragmentTransaction.setReorderingAllowed(true)
-//            fragmentTransaction.addSharedElement(sharedView, transitionName)
-//            //            fragmentTransaction.setTransition(getResources().get);
-//            fragmentTransaction.addToBackStack("")
-//            fragmentTransaction.replace(R.id.container, potdFragment)
-//            fragmentTransaction.commit()
-//            //
-//            //            // 1. Exit for Previous Fragment
-//            //            Fade exitFade = new Fade();
-//            //            exitFade.setDuration(FADE_DEFAULT_TIME);
-//            //            previousFragment.setExitTransition(exitFade);
-//            //
-//            //            // 2. Shared Elements Transition
-//            //            TransitionSet enterTransitionSet = new TransitionSet();
-//            //            enterTransitionSet.addTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
-//            //            enterTransitionSet.setDuration(MOVE_DEFAULT_TIME);
-//            //            enterTransitionSet.setStartDelay(FADE_DEFAULT_TIME);
-//            //            potdFragment.setSharedElementEnterTransition(enterTransitionSet);
-//            //
-//            //            // 3. Enter Transition for New Fragment
-//            //            Fade enterFade = new Fade();
-//            //            enterFade.setStartDelay(MOVE_DEFAULT_TIME + FADE_DEFAULT_TIME);
-//            //            enterFade.setDuration(FADE_DEFAULT_TIME);
-//            //            potdFragment.setEnterTransition(enterFade);
-//            //
-//            //            fragmentTransaction.addSharedElement(sharedView, sharedView.getTransitionName());
-//            //            fragmentTransaction.addToBackStack("backstack");
-//            //            fragmentTransaction.replace(R.id.container, potdFragment);
-//            //            fragmentTransaction.commitAllowingStateLoss();
-//
-//            //            fragmentManager.beginTransaction()
-//            //                    .addSharedElement(sharedView, transitionName)
-//            //                    .setTransition(android.R.transition.explode)
-//            //                    .addToBackStack("MAIN")
-//            //                    .replace(R.id.container, potdFragment)
-//            //                    .commit();
-//        }
-//    }
-
-    //        Call<POTD> dateCall = service.getPOTDByDate("2019-02-02", ApiConfig.API_KEY);
-//        dateCall.enqueue(new Callback<POTD>() {
-//            @Override
-//            public void onResponse(Call<POTD> call, Response<POTD> response) {
-//                if (response.body() != null) {
-//                    photoOfDay = response.body();
-//                    progressBar.setVisibility(View.GONE);
-//                    updateAdapter(photoOfDay);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<POTD> call, Throwable t) {
-//
-//            }
-//        });
-
-
-//        Call<POTD> call = service.getPhotoOfDay(ApiConfig.API_KEY);
-//        call.enqueue(new Callback<POTD>() {
-//            @Override
-//            public void onResponse(Call<POTD> call, Response<POTD> response) {
-//                if (response.body() != null) {
-//                    photoOfDay = response.body();
-//                    progressBar.setVisibility(View.GONE);
-//                    updateAdapter(photoOfDay);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<POTD> call, Throwable t) {
-//            }
-//        });
-
-//    private void updateAdapter(POTD potd) {
-//        POTDList.add(potd);
-//        POTDAdapter potdAdapter = new POTDAdapter(this, POTDList);
-//        recyclerView.setAdapter(potdAdapter);
-//        potdAdapter.notifyDataSetChanged();
-//    }
 }
