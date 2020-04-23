@@ -4,11 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+
     defaultConfig {
         applicationId "com.timsimonhughes.atlas"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -48,5 +50,6 @@ dependencies {
     implementation dependencies.moshi
 
     // Moshi dependencies
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
 }

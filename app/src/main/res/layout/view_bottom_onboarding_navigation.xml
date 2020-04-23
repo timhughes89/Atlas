@@ -7,7 +7,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    tools:showIn="@layout/frag_onboarding">
+    tools:showIn="@layout/fragment_onboarding">
 
     <View
         android:id="@+id/view"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.timsimonhughes.atlas.ui.views.PageIndicatorView
+    <com.timsimonhughes.atlas.views.PageIndicatorView
         android:id="@+id/page_indicator_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

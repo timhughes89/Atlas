@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.timsimonhughes.atlas.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash"/>
+
+    <fragment
+        android:id="@+id/navigation_onboarding"
+        android:name="com.timsimonhughes.atlas.ui.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding"/>
+
+    <fragment android:id="@+id/navigation_news"
+        android:name="com.timsimonhughes.atlas.ui.news.NewsFragment"
+        android:label="NewsFragment"
+        tools:layout="@layout/fragment_news"/>
+
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.timsimonhughes.atlas.ui.news.NewsFragment"
+        android:label="StoriesFragment"
+        tools:layout="@layout/fragment_discover" />
+
+    <fragment
+        android:id="@+id/navigation_photo_of_day"
+        android:name="com.timsimonhughes.atlas.ui.potd.POTDFragment"
+        android:label="POTDFragment"
+        tools:layout="@layout/fragment_photos"/>
+
+    <!-- News Detail -->
+    <fragment
+        android:id="@+id/navigation_news_detail"
+        android:name="com.timsimonhughes.atlas.ui.newsDetail.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" />
+
+    <fragment
+        android:id="@+id/navigation_discover_detail"
+        android:name="com.timsimonhughes.atlas.ui.discover.DiscoverDetailFragment"
+        android:label="DiscoverDetailFragment"
+        tools:layout="@layout/fragment_discover_detail"/>
+
+    <fragment
+        android:id="@+id/navigation_POTD_detail"
+        android:name="com.timsimonhughes.atlas.ui.potdDetail.POTDDetailFragment"
+        android:label="POTDDetailFragment"
+        tools:layout="@layout/fragment_potd_detail"/>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.timsimonhughes.atlas.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+
+
+</navigation>

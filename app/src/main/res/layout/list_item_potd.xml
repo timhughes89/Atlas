@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.timsimonhughes.atlas.ui.views.RoundedImageView
+        <com.timsimonhughes.atlas.views.RoundedImageView
             android:id="@+id/image_view_potd"
             android:layout_width="0dp"
             android:layout_height="180dp"

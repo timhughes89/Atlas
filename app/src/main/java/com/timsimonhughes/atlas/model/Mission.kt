@@ -7,10 +7,10 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Mission(
-        @field:Json(name = "missionUrl")
-        val missionUrl: String,
-        @field:Json(name = "missionTitle")
-        val missionTitle: String
+    @field:Json(name = "missionUrl")
+    val missionUrl: String?,
+    @field:Json(name = "missionTitle")
+    val missionTitle: String?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
             missionUrl = parcel.readString(),

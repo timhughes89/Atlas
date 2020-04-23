@@ -35,33 +35,65 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
     <string name="pref_POTD_title">Photo of the day amount</string>
     <string name="pref_POTD_summary">Set the amount of the photo\'s to display</string>
     <string name="pref_POTD_key">potd_key</string>
+    <string name="pref_offline_mode_title">Offline mode</string>
+
+    <string name="pref_offline_mode_summary">Enable to show content, when not connected to the internet.</string>
+    <string name="pref_offline_mode_key">offline_mode_key</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+
+
+    <!-- Example General settings -->
+    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message history</string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to
+        messages</string>
+    <string name="pref_header_account">Account</string>
+
+    <string name="pref_title_account">Market</string>
+    <string name="pref_title_account_settings">Account settings</string>
+    <string name="pref_header_notifications">Notifications</string>
+
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <string name="content_description_planet_image">Planet Image</string>
+
+    <string name="content_description_mission_image">Mission Image</string>
+
+    <string name="mission_image_transition">Mission Image Transition</string>
+    <string name="planet_title_placeholder">Planet Title</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="distance_from_sun_label">Distance from sun</string>
+    <string name="orbital_period_label">Orbital period</string>
+    <string name="action_discover">Discover</string>
+    <string name="planet_type_label">Planet Type</string>
+    <string name="planet_moon_label">Moons</string>
+
+    <!-- Content Descriptions -->
+    <string name="potd_content_description">Photo of the day</string>
+    <string name="next_button_content_description">Next Button</string>
+    <string name="previous_button_content_description">Previous Button</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="pref_POTD_entries">
         <item>3</item>
         <item>5</item>
         <item>10</item>
         <item>20</item>
     </string-array>
-
-    <string name="pref_offline_mode_title">Offline mode</string>
-    <string name="pref_offline_mode_summary">Enable to show content, when not connected to the internet.</string>
-    <string name="pref_offline_mode_key">offline_mode_key</string>
-    <string name="action_settings">Settings</string>
     <string-array name="pref_offline_mode_title_entries">
         <item>Entry 1</item>
         <item>Entry 2</item>
         <item>Entry 3</item>
     </string-array>
-
-
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message history</string>
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to
-        messages</string>
     <string-array name="pref_example_list_titles">
         <item>Always</item>
         <item>When possible</item>
@@ -72,13 +104,6 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
         <item>0</item>
         <item>-1</item>
     </string-array>
-
-
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_account">Account</string>
-    <string name="pref_title_account">Market</string>
-
     <string-array name="pref_market_titles">
         <item>United States</item>
         <item>Canada</item>
@@ -95,42 +120,19 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
         <item>JA0</item>
         <item>-1</item>
     </string-array>
-
     <string-array name="list_preference_entries">
         <item>Entry 1</item>
         <item>Entry 2</item>
         <item>Entry 3</item>
     </string-array>
-
     <string-array name="list_preference_entry_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="multi_select_list_preference_default_value" />
-    <string name="pref_title_account_settings">Account settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-    <string name="pref_title_vibrate">Vibrate</string>
-
-    <!-- Content Descriptions -->
-    <string name="content_description_planet_image">Planet Image</string>
-    <string name="content_description_mission_image">Mission Image</string>
-    <string name="mission_image_transition">Mission Image Transition</string>
-    <string name="planet_title_placeholder">Planet Title</string>
-    <string name="distance_from_sun_label">Distance from sun</string>
-    <string name="orbital_period_label">Orbital period</string>
-    <string name="action_discover">Discover</string>
-    <string name="planet_type_label">Planet Type</string>
-    <string name="planet_moon_label">Moons</string>
-    <string name="potd_content_description">Photo of the day</string>
-    <string name="next_button_content_description">Next Button</string>
-    <string name="previous_button_content_description">Previous Button</string>
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.timsimonhughes.atlas
 
 import android.app.Application
+import com.timsimonhughes.atlas.receivers.NetworkConnectivityReceiver
 
 class AtlasApp : Application() {
 

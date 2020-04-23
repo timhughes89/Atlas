@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.timsimonhughes.atlas.ui.views.RoundedImageView
+    <com.timsimonhughes.atlas.views.RoundedImageView
         android:id="@+id/image_view_news"
         android:layout_width="match_parent"
         android:layout_height="180dp"
