@@ -54,24 +54,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_view_potd_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:fontFamily="@font/titillium_bold"
-                android:lineSpacingExtra="0sp"
-                android:textAppearance="@style/AppTheme.TextAppearance.Title"
-                android:textSize="30sp"
-                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/example_title" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_view_potd_explanation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -79,8 +74,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/titillium_regular"
-                android:textColor="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

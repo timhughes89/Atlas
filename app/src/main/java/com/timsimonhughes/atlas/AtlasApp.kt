@@ -1,17 +1,16 @@
 package com.timsimonhughes.atlas
 
 import android.app.Application
+import android.content.Context
 import com.timsimonhughes.atlas.receivers.NetworkConnectivityReceiver
 
 class AtlasApp : Application() {
 
-    companion object {
-        lateinit var atlasApplicationInstance: AtlasApp
-    }
-
     override fun onCreate() {
         super.onCreate()
         atlasApplicationInstance = this
+        context = applicationContext
+
     }
 
     @Synchronized
@@ -22,4 +21,10 @@ class AtlasApp : Application() {
     fun setConnectivityListener(listener: NetworkConnectivityReceiver.ConnectivityReceiverListener) {
         NetworkConnectivityReceiver.connectivityReceiverListener = listener
     }
+
+    companion object {
+        lateinit var atlasApplicationInstance: AtlasApp
+        var context: Context? = null
+    }
+
 }

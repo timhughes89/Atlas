@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_stories"
-        android:title="@string/action_stories"
+        android:id="@+id/navigation_news"
+        android:title="@string/action_news"
         android:icon="@drawable/ic_story"
         android:orderInCategory="100"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_discover"
+        android:id="@+id/navigation_discover"
         android:title="@string/action_discover"
         android:icon="@drawable/ic_discover_state_anim"
         android:orderInCategory="100"
@@ -19,7 +19,7 @@
         tools:ignore="AlwaysShowAction" />
 
     <item
-        android:id="@+id/action_photos"
+        android:id="@+id/navigation_photo_of_day"
         android:title="@string/action_photo"
         android:icon="@drawable/ic_photo"
         android:orderInCategory="100"

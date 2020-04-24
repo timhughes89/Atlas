@@ -63,7 +63,7 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
       computational efficiency. */
 
     private static final String planetName[] = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "2008 VB4", "2009 FG", "Halley"};
-    private static final int planetOrbitColors[] = {R.color.colorAccent, };
+    private static final int planetOrbitColors[] = {R.color.color_primary, };
 
     private static final double epsilon[] = {0.206, 0.007, 0.017, 0.093, 0.048, 0.056, 0.047, 0.009, 0.248, 0.617, 0.529, 0.967};
     private static final double a[] = {0.387, 0.723, 1.0, 1.524, 5.203, 9.54, 19.18, 30.06, 39.53, 2.35, 1.97, 17.83};
@@ -130,7 +130,7 @@ public class PlanetOrbitView extends View implements OnClickListener, OnLongClic
         dt = 1 / (double) numSteps;
 
         sunColor = getContext().getColor(R.color.colorSun);
-        mBackgroundColor = getContext().getColor(R.color.colorAccent);
+        mBackgroundColor = getContext().getColor(R.color.color_primary);
 
         // Add click and long click listeners
         setOnClickListener(this);

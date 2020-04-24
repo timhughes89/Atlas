@@ -3,24 +3,40 @@ package com.timsimonhughes.atlas.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+
 import com.timsimonhughes.atlas.receivers.NetworkConnectivityReceiver
-import com.timsimonhughes.atlas.ui.splash.SplashFragment
 import com.google.android.material.snackbar.Snackbar
 import com.timsimonhughes.atlas.AtlasApp
+import com.timsimonhughes.atlas.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), NetworkConnectivityReceiver.ConnectivityReceiverListener {
 
+    private lateinit var navController: NavController
+    private lateinit var bottomNavigationView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.timsimonhughes.atlas.R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         // Manually check internet connection
-        checkConnection()
+//        checkConnection()
 
-        val fragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().add(com.timsimonhughes.atlas.R.id.container, SplashFragment()).commit()
+        navController = findNavController(R.id.nav_host_fragment)
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view)
+
+        bottomNavigationView.setupWithNavController(
+            Navigation.findNavController(
+                this, R.id.nav_host_fragment
+            )
+        )
     }
 
     private fun checkConnection() {

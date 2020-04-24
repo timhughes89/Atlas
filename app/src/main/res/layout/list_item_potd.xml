@@ -22,7 +22,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:background="@color/colorPrimary"
             android:contentDescription="@string/potd_content_description"
             android:scaleType="centerCrop"
             android:transitionName="@string/POTD_image_transition"
@@ -30,15 +29,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_view_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/titillium_regular"
-            android:textAlignment="textEnd"
-            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/image_view_potd"
             app:layout_constraintTop_toTopOf="@+id/image_view_potd"
             tools:text="Date" />
@@ -46,7 +42,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_explanation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,10 +51,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:ellipsize="end"
-        android:fontFamily="@font/titillium_regular"
-        android:lineSpacingExtra="4dp"
         android:maxLines="3"
-        android:textColor="@color/colorWhite60"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- General Colors -->
-    <color name="colorPrimary">#101010</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FC3D21</color>
-
-    <color name="colorPrimaryLight">#272727</color>
-    <color name="colorBorder">#606060</color>
-
-    <color name="colorAccentTranslucent">#20FC3D21</color>
-    <color name="colorControlHighlight">@color/colorAccentTranslucent</color>
-
-    <color name="colorAccent60">#60FC3D21</color>
-    <color name="colorGrey80">#80000000</color>
-    <color name="colorGrey20">#20000000</color>
-
-    <color name="colorBackgroundGreyDark">#202124</color>
-    <color name="colorBackgroundGreyLight">#323639</color>
-
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorWhite60">#60FFFFFF</color>
-    <color name="colorWhite20">#20FFFFFF</color>
-
-    <color name="stateActive">@color/colorWhite</color>
-    <color name="stateInactive">@color/colorWhite60</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Planet Colors -->
     <color name="colorSun">#FFF6D5</color>
@@ -35,5 +11,55 @@
     <color name="colorPlanetSaturn">#D0A673</color>
     <color name="colorPlanetUranus">#D1E7E9</color>
     <color name="colorPlanetNeptune">#6491DA</color>
+
+    <!--Color-->
+    ​
+    <!--Material uses an organized approach to applying color by providing a set of attributes -->
+    <!--which define the color of generalized UI elements such as backgrounds, surfaces, type -->
+    <!--and icons. Using these attributes throughout your app makes it easy to change a single -->
+    <!--color, or the entire theme, and have those changes cascade through the interface.-->
+    ​
+    <!--Color is customized by overriding Material Components color attributes with custom -->
+    <!--color values. In this project, your theme’s color attributes are already overridden -->
+    <!--with default values defined in this file, color.xml.  Change any of the values in -->
+    <!--this file to see changes applied across all elements of your app.-->
+    ​
+    <!--LIGHT COLOR THEME-->
+    ​
+    <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
+    <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
+    <!--selection controls.-->
+    <color name="color_primary">#FC3D21</color>
+    <color name="color_primary_variant">#FC3D21</color>
+    <color name="color_secondary">#45CDCA</color>
+    <color name="color_secondary_variant">#27C7E4</color>
+    <color name="color_tertiary">#BC4080</color>
+    <color name="color_tertiary_variant">#BC4080</color>
+    ​
+    <!--colorBackground appears behind scrollable content and is used for the default window-->
+    <!--background. colorSurface is mapped to the surface of components such as cards, sheets-->
+    <!--and menus. colorError is used to indicate an error state for components such as-->
+    <!--text fields.-->
+    <color name="color_background">#000000</color>
+    <color name="color_surface">#101010</color>
+    <color name="color_error">#b00020</color>
+    ​
+    <!--"On" colors define how text, icons and strokes are colored in relation to the surface-->
+    <!--on which they appear.-->
+    <color name="color_on_primary">#ffffff</color>
+    <color name="color_on_secondary">#000000</color>
+    <color name="color_on_background">#ffffff</color>
+    <color name="color_on_surface">#ffffff</color>
+    <color name="color_on_error">#ffffff</color>
+
+    <!-- Color tints  -->
+    <color name="color_black_10">#10000000</color>
+    <color name="color_black_50">#50000000</color>
+
+    <color name="color_white_10">#10FFFFFF</color>
+    <color name="color_white_60">#60ffffff</color>
+
+    <!-- Needed to override outlined box stroke color textInputLayout -->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/color_white_60</color>
 
 </resources>

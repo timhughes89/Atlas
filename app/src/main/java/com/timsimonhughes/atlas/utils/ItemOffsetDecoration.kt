@@ -1,4 +1,4 @@
-package com.timsimonhughes.atlas.ui
+package com.timsimonhughes.atlas.utils
 
 import android.graphics.Rect
 import android.view.View

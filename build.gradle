@@ -5,12 +5,12 @@ ext {
     pagingVersion = "2.1.0"
     supportVersion = '1.0.0-beta01'
     appCompatVersion = "1.1.0"
-    materialComponentsVersion = "1.1.0-alpha05"
+    materialComponentsVersion = "1.2.0-alpha06"
     paletteVersion = "1.0.0"
     glideVersion = "4.9.0"
     constraintLayoutVersion = "1.1.3"
     retrofitVersion = "2.7.2"
-    navigationFragmentVersion = "1.0.0"
+    navigationVersion = "2.2.1"
     supportPreferenceVersion = "28.0.0"
     moshiVersion = "1.9.2"
     okHttpVersion = "4.3.1"
@@ -31,7 +31,8 @@ ext {
             retrofitGsonConverter    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
             okHttp                   : "com.squareup.okhttp3:okhttp:$okHttpVersion",
             oktHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
-            navigationFragment       : "android.arch.navigation:navigation-fragment:$navigationFragmentVersion",
+            navigationFragment       : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigation               : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
             supportPreference        : "com.android.support:preference-v7:$supportPreferenceVersion",
             moshi                    : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
             ktxCore                  : "androidx.core:core-ktx:$ktxCoreVersion"

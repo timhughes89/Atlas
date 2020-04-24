@@ -14,10 +14,8 @@
 
     <!-- Action String -->
     <string name="action_favourite">Favourite</string>
-    <string name="action_missions">Missions</string>
     <string name="action_photo">Photos</string>
     <string name="action_news">News</string>
-    <string name="action_stories">Stories</string>
 
     <!-- Placeholder strings -->
     <string name="planet_desc_placeholder">The fourth planet from the Sun, Mars is a dusty, cold, desert world with a very thin atmosphere. This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons and weather.

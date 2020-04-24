@@ -2,11 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:color="@color/stateActive"
+        android:color="@color/color_primary"
         android:state_checked="true"/>
 
     <item
-        android:color="@color/stateInactive"
+        android:color="@color/color_on_background"
         android:state_checked="false" />
 
 </selector>

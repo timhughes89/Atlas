@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:background="@android:color/black">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -56,9 +55,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_onboarding_title_2"
-        style="@style/AppTheme.TextAppearance.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -71,16 +69,14 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Title" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_onboarding_description_2"
-        style="@style/AppTheme.TextAppearance.Body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="24dp"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite60"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -57,7 +57,7 @@ public class RoundedImageView extends AppCompatImageView {
         mBorderPaint.setAntiAlias(true);
         mBorderPaint.setStyle(Paint.Style.STROKE);
         mBorderPaint.setStrokeWidth(borderWidth);
-        mBorderPaint.setColor(getResources().getColor(R.color.colorWhite20));
+        mBorderPaint.setColor(getResources().getColor(R.color.color_on_surface));
 
         mRectF = new RectF(0,0, canvasWidth, canvasHeight);
         mPath.addRoundRect(mRectF, cornerRadius, cornerRadius, Path.Direction.CW);

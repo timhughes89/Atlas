@@ -3,6 +3,6 @@
     android:color="?attr/colorControlHighlight">
 
     <item android:id="@+id/mask"
-        android:drawable="@color/colorAccent"/>
+        android:drawable="@color/color_primary"/>
 
 </ripple>

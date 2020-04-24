@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.timsimonhughes.atlas.R;
-import com.timsimonhughes.atlas.ui.MainFragment;
 import com.timsimonhughes.atlas.views.PageIndicatorView;
 
 import androidx.annotation.NonNull;
@@ -101,12 +100,12 @@ public class OnboardingFragment extends Fragment {
                 onboardingViewPager.setCurrentItem(pagePosition, true);
                 pageIndicatorView.setCurrentIndex(pagePosition);
             } else {
-                if (getFragmentManager() != null) {
-                    getFragmentManager().beginTransaction()
-                            .setCustomAnimations(R.anim.view_animation_fade_in, R.anim.view_animation_fade_out)
-                            .replace(R.id.container, new MainFragment())
-                            .commit();
-                }
+//                if (getFragmentManager() != null) {
+//                    getFragmentManager().beginTransaction()
+//                            .setCustomAnimations(R.anim.view_animation_fade_in, R.anim.view_animation_fade_out)
+//                            .replace(R.id.container, new MainFragment())
+//                            .commit();
+//                }
             }
         });
 

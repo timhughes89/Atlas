@@ -9,7 +9,16 @@
         android:id="@+id/navigation_splash"
         android:name="com.timsimonhughes.atlas.ui.splash.SplashFragment"
         android:label="SplashFragment"
-        tools:layout="@layout/fragment_splash"/>
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_onboarding"
+            app:destination="@id/navigation_onboarding" />
+
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_news"
+            app:destination="@id/navigation_news" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_onboarding"
@@ -24,7 +33,7 @@
 
     <fragment
         android:id="@+id/navigation_discover"
-        android:name="com.timsimonhughes.atlas.ui.news.NewsFragment"
+        android:name="com.timsimonhughes.atlas.ui.discover.DiscoverFragment"
         android:label="StoriesFragment"
         tools:layout="@layout/fragment_discover" />
 
@@ -43,7 +52,7 @@
 
     <fragment
         android:id="@+id/navigation_discover_detail"
-        android:name="com.timsimonhughes.atlas.ui.discover.DiscoverDetailFragment"
+        android:name="com.timsimonhughes.atlas.ui.disoverDetail.DiscoverDetailFragment"
         android:label="DiscoverDetailFragment"
         tools:layout="@layout/fragment_discover_detail"/>
 

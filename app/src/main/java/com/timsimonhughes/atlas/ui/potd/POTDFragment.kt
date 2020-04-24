@@ -16,7 +16,6 @@ import com.timsimonhughes.atlas.model.POTD
 import com.timsimonhughes.atlas.network.ApiConfig
 import com.timsimonhughes.atlas.network.NasaPotdService
 import com.timsimonhughes.atlas.network.RetrofitClientInstance
-import com.timsimonhughes.atlas.ui.MainFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,7 +30,7 @@ class POTDFragment : Fragment(),
     private val FADE_DEFAULT_TIME: Long = 300
     private val cacheSize = 10 * 1024 * 1024
 
-    private val TAG = MainFragment::class.java.simpleName
+//    private val TAG = MainFragment::class.java.simpleName
 
     private lateinit var photoOfDay: POTD
     private lateinit var POTDList: List<POTD>
@@ -83,7 +82,7 @@ class POTDFragment : Fragment(),
             }
 
             override fun onFailure(call: Call<List<POTD>>, t: Throwable) {
-                Log.d(TAG, "TAG Message")
+//                Log.d(TAG, "TAG Message")
             }
         })
     }

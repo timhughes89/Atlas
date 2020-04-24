@@ -1,4 +1,4 @@
-package com.timsimonhughes.atlas.ui.discover;
+package com.timsimonhughes.atlas.ui.disoverDetail;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

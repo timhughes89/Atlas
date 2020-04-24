@@ -13,12 +13,12 @@
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/colorWhite20"
+        android:background="@color/color_on_surface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/button_previous"
         style="?attr/borderlessButtonStyle"
         android:layout_width="48dp"
@@ -45,8 +45,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:circle_radius="4dp"
-        app:active_circle_color="@color/colorWhite"
-        app:inactive_circle_color="@color/colorWhite60"
+        app:active_circle_color="@color/color_on_surface"
+        app:inactive_circle_color="@color/color_on_surface"
         app:distance_between_circles="8dp"
         app:number_of_circles="3" />
 

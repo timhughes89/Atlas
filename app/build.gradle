@@ -47,7 +47,9 @@ dependencies {
     implementation dependencies.paging
     implementation dependencies.kotlin
     implementation dependencies.navigationFragment
+    implementation dependencies.navigation
     implementation dependencies.moshi
+    implementation dependencies.ktxCore
 
     // Moshi dependencies
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
