@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_discover"
+    app:startDestination="@id/navigation_discover"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.timsimonhughes.discover.ui.DiscoverFragment"
+        android:label="DiscoverFragment"
+        tools:layout="@layout/fragment_discover">
+
+        <action
+            android:id="@+id/action_navigation_discover_to_navigation_discover_detail"
+            app:destination="@id/navigation_discover_detail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_discover_detail"
+        android:name="com.timsimonhughes.discover.ui.DiscoverDetailFragment"
+        android:label="DiscoverDetailFragment"
+        tools:layout="@layout/fragment_discover_detail">
+
+        <argument
+            android:name="itemId"
+            app:argType="integer" />
+
+    </fragment>
+</navigation>

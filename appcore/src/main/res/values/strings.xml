@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">Atlas</string>
+    <string name="app_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Transition Strings -->
+    <string name="POTD_image_transition">photoOfTheDayTransition</string>
+    <string name="transition_name">Shared Element Transition</string>
+
+    <!-- NewsFragment -->
+    <string name="news_card_transition_name">news_card_%1$s</string>
+    <string name="news_to_news_detail_transition_name">news_to_news_detail</string>
+
+    <!-- DiscoverFragment -->
+    <string name="discover_card_transition_name">discover_card_%1$s</string>
+    <string name="discover_to_discover_detail_transition_name">discover_to_discover_detail</string>
+
+    <!-- LauchesFragment -->
+    <string name="launches_card_transition_name">launch_card_%1$s</string>
+    <string name="launches_to_launches_detail_transition_name">launch_to_launch_detail</string>
+
+    <!-- Example Data -->
+    <string name="example_date">01 February 2018</string>
+    <string name="example_title">Twin Galaxies in Virgo</string>
+    <string name="example_copy">Spiral galaxy pair NGC 4567 and NGC 4568 share this sharp cosmic vista with lonely elliptical galaxy NGC 4564. All are members of the large Virgo Galaxy Cluster. With their classic spiral arms, dust lanes, and star clusters, the eye-catching spiral pair is also known as the Butterfly Galaxies or the Siamese Twins. Very close together, the galaxy twins don\'t seem to be too distorted by gravitational tides. Their giant molecular clouds are known to be colliding though and are likely fueling the formation of massive star clusters. The galaxy twins are about 52 million light-years distant, while their bright cores appear separated by about 20,000 light-years. Of course, the spiky foreground stars lie within our own Milky Way.</string>
+
+    <!-- Action String -->
+    <string name="action_favourite">Favourite</string>
+    <string name="action_photo">Photos</string>
+    <string name="action_news">News</string>
+
+    <!-- Placeholder strings -->
+    <string name="planet_desc_placeholder">The fourth planet from the Sun, Mars is a dusty, cold, desert world with a very thin atmosphere. This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons and weather.
+
+NASA\'s Opportunity Rover Mission on Mars Comes to End Mars is one of the most explored bodies in our solar system, and it\'s the only planet where we\'ve sent rovers to roam the alien landscape.
+
+These robotic explorers have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago.</string>
+
+    <!-- App General Setting Preferences -->
+    <string name="pref_header_general_settings">General Settings</string>
+    <string name="pref_switch_title">Settings option</string>
+    <string name="pref_switch_summary">Turn this option on and off</string>
+    <string name="pref_switch_key">example_switch</string>
+
+    <string name="pref_POTD_title">Photo of the day amount</string>
+    <string name="pref_POTD_summary">Set the amount of the photo\'s to display</string>
+    <string name="pref_POTD_key">potd_key</string>
+    <string name="pref_offline_mode_title">Offline mode</string>
+
+    <string name="pref_offline_mode_summary">Enable to show content, when not connected to the internet.</string>
+    <string name="pref_offline_mode_key">offline_mode_key</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+
+    <!-- Example General settings -->
+    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message history</string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_header_account">Account</string>
+
+    <string name="pref_title_account">Market</string>
+    <string name="pref_title_account_settings">Account settings</string>
+    <string name="pref_header_notifications">Notifications</string>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <string name="content_description_planet_image">Planet Image</string>
+    <string name="content_description_mission_image">Mission Image</string>
+
+    <string name="mission_image_transition">Mission Image Transition</string>
+    <string name="planet_title_placeholder">Planet Title</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="distance_from_sun_label">Distance from sun</string>
+    <string name="orbital_period_label">Orbital period</string>
+    <string name="action_discover">Discover</string>
+    <string name="planet_type_label">Planet Type</string>
+    <string name="planet_moon_label">Moons</string>
+
+    <!-- Content Descriptions -->
+    <string name="potd_content_description">Photo of the day</string>
+    <string name="next_button_content_description">Next Button</string>
+    <string name="previous_button_content_description">Previous Button</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_error_network">There was a problem conntecting to the internet, please try again.</string>
+    <string name="label_button_retry">Retry</string>
+    <string name="action_launches">Launches</string>
+    <string-array name="pref_POTD_entries">
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="pref_offline_mode_title_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_market_titles">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>United Kingdom</item>
+        <item>India</item>
+        <item>Japan</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="pref_market_values">
+        <item>US</item>
+        <item>CA</item>
+        <item>UK</item>
+        <item>IN</item>
+        <item>JA0</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>

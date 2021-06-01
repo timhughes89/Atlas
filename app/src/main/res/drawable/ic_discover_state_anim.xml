@@ -4,16 +4,16 @@
     <item
         android:id="@+id/active_state"
         android:state_pressed="true"
-        android:drawable="@drawable/ic_explore_active"/>
+        android:drawable="@drawable/ic_baseline_explore_active_24"/>
 
     <item
         android:id="@+id/inactive_state"
         android:drawable="@drawable/ic_explore_inactive" />
 
-    <transition
-        android:drawable="@drawable/ic_explore_avd"
-        android:fromId="@id/inactive_state"
-        android:toId="@id/active_state"
-        android:reversible="true"/>
+<!--    <transition-->
+<!--        android:drawable="@drawable/ic_explore_avd"-->
+<!--        android:fromId="@id/inactive_state"-->
+<!--        android:toId="@id/active_state"-->
+<!--        android:reversible="true"/>-->
 
 </animated-selector>

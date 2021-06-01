@@ -19,9 +19,9 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        sharedPreferences = activity!!.getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
+        sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
 
-        navController = findNavController()
+//        navController = findNavController()
 
         Handler().postDelayed( {
             handleNavigation()
@@ -30,7 +30,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private fun handleNavigation() {
 
-        navController.navigate(R.id.action_navigation_splash_to_navigation_news)
+        findNavController().navigate(R.id.action_navigation_splash_to_navigation_news)
 
 //        if (sharedPreferences.contains(Constants.FIRST_RUN)) {
 //            navController.navigate(R.id.action_navigation_splash_to_navigation_news)

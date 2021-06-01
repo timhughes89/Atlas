@@ -28,7 +28,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/previous_button_content_description"
         android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/ic_keyboard_arrow_left"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/next_button_content_description"
         android:foreground="?attr/selectableItemBackground"
-        android:src="@drawable/ic_keyboard_arrow_right"
+        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

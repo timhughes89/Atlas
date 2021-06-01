@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:layout_gravity="bottom"
-    android:background="@drawable/bottom_navigation_view_background"
     app:itemIconTint="@drawable/states_bottom_navigation"
     app:itemTextColor="@drawable/states_bottom_navigation"
     app:menu="@menu/menu_bottom_navigation" />

@@ -1,60 +1,74 @@
 package com.timsimonhughes.atlas.ui.potd
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.timsimonhughes.atlas.Constants
 import com.timsimonhughes.atlas.R
-import com.timsimonhughes.atlas.model.POTD
-import com.timsimonhughes.atlas.network.ApiConfig
-import com.timsimonhughes.atlas.network.NasaPotdService
-import com.timsimonhughes.atlas.network.RetrofitClientInstance
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.timsimonhughes.atlas.ui.MainActivity
+import com.timsimonhughes.atlas.ui.potd.adapter.POTDAdapter
+import com.timsimonhughes.atlas.ui.potd.viewModel.POTDViewModel
+import kotlinx.android.synthetic.main.fragment_photos.*
+import org.koin.android.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.datepicker.CalendarConstraints
+import com.timsimonhughes.atlas.model.potd.POTDResult
+//import kotlinx.android.synthetic.main.content_news_error.*
+import kotlinx.android.synthetic.main.content_potd.*
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collectLatest
 
-class POTDFragment : Fragment(),
-    POTDItemClickListener {
+class POTDFragment : Fragment(R.layout.fragment_photos) {
 
-    private val MOVE_DEFAULT_TIME: Long = 1000
-    private val FADE_DEFAULT_TIME: Long = 300
-    private val cacheSize = 10 * 1024 * 1024
+    private val potdViewModel: POTDViewModel by viewModel()
 
-//    private val TAG = MainFragment::class.java.simpleName
-
-    private lateinit var photoOfDay: POTD
-    private lateinit var POTDList: List<POTD>
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var progressBar: ProgressBar
+    private val potdAdapter = POTDAdapter()
     private lateinit var endDate: String
     private lateinit var startDate: String
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var searchJob: Job? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_photos, container, false)
-        initUI(view)
-        getDateRange()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setState(UIState.LOADING)
+        initialiseAdapter()
         fetchPhotoOfDay()
-        return view
+
+        fabPotd.setOnClickListener {
+            createDatePicker(requireContext())
+        }
+
+//        btn_feed_error_button.setOnClickListener {
+//            setState(UIState.LOADING)
+//            fetchPhotoOfDay()
+//        }
     }
 
-    private fun initUI(view: View) {
-        progressBar = view.findViewById(R.id.progress_bar)
-        recyclerView = view.findViewById(R.id.recycler_view_potd)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+    private fun createDatePicker(context: Context) {
+        val calendarConstraintBuilder = CalendarConstraints.Builder()
+        val supportFragmentManager = (context as MainActivity).supportFragmentManager
+        val materialDatePickerBuilder = MaterialDatePicker.Builder.dateRangePicker()
+            .setTitleText("Pick a date range")
+            .setTheme(R.style.ThemeOverlay_Atlas_MaterialCalendar)
+            .build()
+
+        materialDatePickerBuilder.show(supportFragmentManager, "TAG")
+
+    }
+
+    private fun initialiseAdapter() {
+        recyclerViewPotd.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = potdAdapter
+        }
     }
 
     private fun getDateRange() {
@@ -70,42 +84,55 @@ class POTDFragment : Fragment(),
     }
 
     private fun fetchPhotoOfDay() {
-        val service = RetrofitClientInstance().getRetrofitInstance(context, cacheSize).create(NasaPotdService::class.java)
-        val dateRangeCall = service.getPOTDByDateRange("2019-04-01", "2019-04-12", ApiConfig.API_KEY)
-        dateRangeCall.enqueue(object : Callback<List<POTD>> {
-            override fun onResponse(call: Call<List<POTD>>, response: Response<List<POTD>>) {
-                if (response.body() != null) {
-                    POTDList = response.body() as ArrayList
-                    progressBar.visibility = View.GONE
-                    updateAdapter(POTDList)
-                }
-            }
+        getDateRange()
 
-            override fun onFailure(call: Call<List<POTD>>, t: Throwable) {
-//                Log.d(TAG, "TAG Message")
-            }
-        })
+        searchJob?.cancel()
+//        searchJob = lifecycleScope.launch {
+//            potdViewModel.getPOTDList("2019-04-01", "2019-04-12").observe(viewLifecycleOwner, Observer { result ->
+//                potdAdapter.submitList(result)
+//            })
+//
+//            potdViewModel.initialNetworkState().observe(viewLifecycleOwner, Observer {
+//
+//            })
+//
+//            potdViewModel.currentNetworkState().observe(viewLifecycleOwner, Observer {
+//
+//            })
+//        }
+
+        searchJob = lifecycleScope.launch {
+            potdViewModel.getPOTDList("2019-04-01", "2019-04-12").observe(viewLifecycleOwner, Observer { result ->
+                potdAdapter.submitList(result)
+                setState(UIState.LOADED)
+            })
+        }
+
     }
 
-    private fun updateAdapter(photosOfTheDayRange: List<POTD>) {
-
-        val layoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down)
-
-        val potdAdapter = POTDAdapter(context, photosOfTheDayRange)
-        potdAdapter.setOnItemClickListener(this)
-        recyclerView.adapter = potdAdapter
-        recyclerView.layoutAnimation = layoutAnimationController
-        recyclerView.scheduleLayoutAnimation()
-        potdAdapter.notifyDataSetChanged()
+    private fun setState(uiState: UIState) {
+        when (uiState) {
+            UIState.LOADING -> {
+                content_potd_skeleton.visibility = View.VISIBLE
+                content_potd.visibility = View.GONE
+                content_news_error.visibility = View.GONE
+            }
+            UIState.LOADED -> {
+                content_potd_skeleton.visibility = View.GONE
+                content_potd.visibility = View.VISIBLE
+                content_news_error.visibility = View.GONE
+            }
+            UIState.ERROR -> {
+                content_potd_skeleton.visibility = View.GONE
+                content_potd.visibility = View.GONE
+                content_news_error.visibility = View.VISIBLE
+            }
+        }
     }
 
-    override fun onItemClick(position: Int, sharedView: View?, potd: POTD?) {
-        val fragmentManager = fragmentManager
-        val transitionName = sharedView?.transitionName
-
-        val fragmentTransaction = fragmentManager!!.beginTransaction()
-        fragmentTransaction.setReorderingAllowed(true)
-        fragmentTransaction.addSharedElement(sharedView!!, transitionName!!)
-        fragmentTransaction.commit()
+    enum class UIState {
+        LOADING,
+        LOADED,
+        ERROR
     }
 }

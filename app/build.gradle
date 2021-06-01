@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion 29
@@ -21,37 +22,59 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding  {
+        enabled true
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    def moshiVersion = "1.9.2"
-
     def dependencies = rootProject.appDependencies
-    implementation dependencies.constraintLayout
+
+    implementation project(':appcore')
+    implementation project(':spaceX')
+    implementation project(':news')
+    implementation project(':discover')
+    implementation project(':nasa')
+
     implementation dependencies.appCompat
+    implementation dependencies.coroutineCore
+    implementation dependencies.coroutineAndroid
+    implementation dependencies.constraintLayout
+    implementation dependencies.glide
+    implementation dependencies.koin
+    implementation dependencies.koinViewModel
+    implementation dependencies.kotlin
+    implementation dependencies.ktxCore
+    implementation dependencies.lifecycleExtensions
+    implementation dependencies.lifecycleLiveData
+    implementation dependencies.lifecycleViewModel
     implementation dependencies.materialComponents
+    implementation dependencies.moshi
+    implementation dependencies.navigation
+    implementation dependencies.navigationFragment
+    implementation dependencies.okHttp
+    implementation dependencies.oktHttpLoggingInterceptor
+    implementation dependencies.paging
     implementation dependencies.palette
-    implementation dependencies.supportPreference
     implementation dependencies.retrofit
     implementation dependencies.retrofitMoshiConverter
     implementation dependencies.retrofitGsonConverter
-    implementation dependencies.okHttp
-    implementation dependencies.oktHttpLoggingInterceptor
-    implementation dependencies.glide
-    implementation dependencies.lifecycle
-    implementation dependencies.paging
-    implementation dependencies.kotlin
-    implementation dependencies.navigationFragment
-    implementation dependencies.navigation
-    implementation dependencies.moshi
-    implementation dependencies.ktxCore
+    implementation dependencies.room
+    implementation dependencies.roomKtx
+    implementation dependencies.supportPreference
+    annotationProcessor dependencies.roomCompiler
 
-    // Moshi dependencies
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+    implementation ui.cardStackView
+
 }

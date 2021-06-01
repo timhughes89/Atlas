@@ -6,7 +6,7 @@
     <item
         android:id="@+id/navigation_news"
         android:title="@string/action_news"
-        android:icon="@drawable/ic_story"
+        android:icon="@drawable/ic_baseline_news_24"
         android:orderInCategory="100"
         app:showAsAction="always" />
 
@@ -19,9 +19,17 @@
         tools:ignore="AlwaysShowAction" />
 
     <item
+        android:id="@+id/navigation_launches"
+        android:title="@string/action_launches"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
         android:id="@+id/navigation_photo_of_day"
         android:title="@string/action_photo"
-        android:icon="@drawable/ic_photo"
+        android:icon="@drawable/ic_baseline_photo_24"
         android:orderInCategory="100"
         app:showAsAction="always" />
 

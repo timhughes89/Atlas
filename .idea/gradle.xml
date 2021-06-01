@@ -11,9 +11,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appcore" />
+            <option value="$PROJECT_DIR$/discover" />
+            <option value="$PROJECT_DIR$/nasa" />
+            <option value="$PROJECT_DIR$/news" />
+            <option value="$PROJECT_DIR$/spaceX" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

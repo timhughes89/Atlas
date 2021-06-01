@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.timsimonhughes.news.model.News" />
+
+        <variable
+            name="clickListener"
+            type="com.timsimonhughes.news.ui.adapter.NewsAdapter.NewsItemClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> clickListener.onItemClick(view, item)}"
+        android:transitionName="@{@string/news_card_transition_name(item.id)}"
+        android:layout_margin="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_view_news"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:contentDescription="@string/content_description_planet_image"
+                android:maxHeight="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcUrl="@{item.imageUrl}"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Atlas.LargeComponent"
+                tools:background="@drawable/example_image_2" />
+
+            <ImageView
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_add_alt" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/newsItemTag"
+                style="@style/TextAppearance.Atlas.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:letterSpacing="0.1"
+                android:text="@{item.tag.value}"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/color_white_60"
+                app:fontFamily="@font/titillium_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_view_news"
+                tools:text="Moon to mars" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{item.title}"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                app:fontFamily="@font/titillium_semi_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newsItemTag"
+                tools:text="Title" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

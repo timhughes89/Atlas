@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.timsimonhughes.spacex.model.Capsule" />
+
+        <variable
+            name="listener"
+            type="com.timsimonhughes.spacex.ui.adapter.CapsuleClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/capsuleCard"
+        style="@style/Widget.Atlas.MaterialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:onClick="@{(v) -> listener.onCapsuleClicked(v, item)}"
+        android:transitionName="@{@string/launches_card_transition_name(item._id)}">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcUrl="@{item._url}"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Atlas.LargeComponent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{String.valueOf(item._id)}"
+            tools:text="ID" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

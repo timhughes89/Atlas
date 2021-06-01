@@ -7,6 +7,14 @@
     <string name="POTD_image_transition">photoOfTheDayTransition</string>
     <string name="transition_name">Shared Element Transition</string>
 
+    <!-- NewsFragment -->
+    <string name="news_card_transition_name">news_card_%1$s</string>
+    <string name="news_to_news_detail_transition_name">news_to_news_detail</string>
+
+    <!-- DiscoverFragment -->
+    <string name="discover_card_transition_name">discover_card_%1$s</string>
+    <string name="discover_to_discover_detail_transition_name">discover_to_discover_detail</string>
+
     <!-- Example Data -->
     <string name="example_date">01 February 2018</string>
     <string name="example_title">Twin Galaxies in Virgo</string>
@@ -41,19 +49,16 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
     <string name="pref_header_general">General</string>
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
 
-
     <!-- Example General settings -->
     <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message history</string>
     <string name="pref_title_display_name">Display name</string>
     <string name="pref_default_display_name">John Smith</string>
-    <string name="pref_title_add_friends_to_messages">Add friends to
-        messages</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string name="pref_header_account">Account</string>
 
     <string name="pref_title_account">Market</string>
     <string name="pref_title_account_settings">Account settings</string>
     <string name="pref_header_notifications">Notifications</string>
-
 
     <!-- Example settings for Data & Sync -->
     <string name="pref_title_new_message_notifications">New message notifications</string>
@@ -63,7 +68,6 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
     <string name="pref_title_vibrate">Vibrate</string>
 
     <string name="content_description_planet_image">Planet Image</string>
-
     <string name="content_description_mission_image">Mission Image</string>
 
     <string name="mission_image_transition">Mission Image Transition</string>
@@ -81,6 +85,9 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
     <string name="next_button_content_description">Next Button</string>
     <string name="previous_button_content_description">Previous Button</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_error_network">There was a problem conntecting to the internet, please try again.</string>
+    <string name="label_button_retry">Retry</string>
+    <string name="action_launches">Launches</string>
     <string-array name="pref_POTD_entries">
         <item>3</item>
         <item>5</item>
@@ -128,9 +135,5 @@ These robotic explorers have found lots of evidence that Mars was much wetter an
         <item>2</item>
         <item>3</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string-array name="multi_select_list_preference_default_value" />
-
 
 </resources>

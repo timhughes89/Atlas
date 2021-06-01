@@ -7,4 +7,20 @@
         <attr name="active_circle_color" format="color"/>
         <attr name="inactive_circle_color" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="OutlinedTextView">
+        <attr name="otv_strokeColor" format="color" />
+        <attr name="otv_strokeWidth" format="float" />
+        <attr name="otv_gradientColorStart" format="color" />
+        <attr name="otv_gradientColorEnd" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_borderColor" format="color"/>
+        <attr name="riv_borderWidth" format="integer"/>
+        <attr name="riv_borderRadius" format="integer"/>
+        <attr name="riv_backgroundColor" format="color"/>
+        <attr name="riv_highlightEnabled" format="boolean"/>
+        <attr name="riv_highlightColor" format="color"/>
+    </declare-styleable>
 </resources>

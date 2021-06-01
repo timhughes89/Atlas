@@ -1,1 +1,6 @@
+include ':appcore'
+include ':discover'
+include ':spaceX'
+include ':news'
+include ':nasa'
 include ':app'

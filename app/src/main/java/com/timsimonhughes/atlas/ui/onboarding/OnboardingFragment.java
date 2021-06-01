@@ -79,10 +79,10 @@ public class OnboardingFragment extends Fragment {
                     imageButtonNext.setVisibility(View.VISIBLE);
                     imageButtonPrevious.setVisibility(View.INVISIBLE);
                 } else if (pagePosition == pageCount - 1) {
-                    imageButtonNext.setImageDrawable(getResources().getDrawable(R.drawable.ic_check));
+                    imageButtonNext.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_check_24));
                 } else {
                     imageButtonPrevious.setVisibility(View.VISIBLE);
-                    imageButtonNext.setImageDrawable(getResources().getDrawable(R.drawable.ic_keyboard_arrow_right));
+                    imageButtonNext.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_keyboard_arrow_right_24));
                 }
             }
 

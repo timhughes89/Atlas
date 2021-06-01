@@ -1,0 +1,82 @@
+{
+  "news": [
+    {
+      "id": 0,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  "Title"
+    },
+    {
+      "id": 1,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 2,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 3,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 4,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 5,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 6,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 7,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 0,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 0,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 8,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 9,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    },
+    {
+      "id": 10,
+      "imageUrl" : "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/49960375231_8692adf2b8_k.jpg",
+      "date" : "",
+      "title":  ""
+    }
+  ]
+}

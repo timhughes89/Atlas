@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Mercury",
+    "image_url": "https://www.universetoday.com/wp-content/uploads/2011/09/mercury1-e1493061575972.jpg",
+    "overview": "The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days. \n\nMercury is appropriately named for the swiftest of the ancient Roman gods.",
+    "orbital_period": "88",
+    "distance_sol": "42,514,239",
+    "moons": "0",
+    "orbital_speed": 0.6,
+    "planet_type": "Terrestrial"
+  },
+  {
+    "title": "Venus",
+    "image_url": "https://spacenews.com/wp-content/uploads/2014/11/VenusUV_NASA4X3.jpg",
+    "overview": "Venus is the second planet from the Sun and our closest planetary neighbor. Similar in structure and size to Earth, Venus spins slowly in the opposite direction from most planets. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead. Glimpses below the clouds reveal volcanoes and deformed mountains. \n\nVenus is named for the ancient Roman goddess of love and beauty, who was known as Aphrodite to the Ancient Greeks.",
+    "orbital_period": "225",
+    "distance_sol": "67,690,399",
+    "moons": "0",
+    "orbital_speed": 0.6,
+    "planet_type": "Terrestrial"
+  },
+  {
+    "title": "Earth",
+    "image_url": "https://s2.best-wallpaper.net/wallpaper/1920x1080/1805/Planet-earth-surface-atmosphere_1920x1080.jpg",
+    "overview": "Our home planet is the third planet from the Sun, and the only place we know of so far that’s inhabited by living things. While Earth is only the fifth largest planet in the solar system, it is the only world in our solar system with liquid water on the surface. \n\nJust slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal.  \n\nThe name Earth is at least 1,000 years old. All of the planets, except for Earth, were named after Greek and Roman gods and goddesses. However, the name Earth is a Germanic word, which simply means “the ground.”",
+    "orbital_period": "365",
+    "distance_sol": "93,327,979",
+    "moons": "1",
+    "orbital_speed": 0.6,
+    "planet_type": "Terrestrial"
+  },
+  {
+    "title": "Mars",
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2017/02/Daybreak_at_Gale_Crater.jpg",
+    "overview": "The fourth planet from the Sun, Mars is a dusty, cold, desert world with a very thin atmosphere. This dynamic planet has seasons, polar ice caps, extinct volcanoes, canyons and weather. Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent rovers to roam the alien landscape. NASA missions have found lots of evidence that Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago. \n\nMars was named by the Romans for their god of war because its reddish color was reminiscent of blood. Other civilizations also named the planet for this attribute; for example, the Egyptians called it Her Desher, meaning the red one. Even today, it is frequently called the Red Planet because iron minerals in the Martian dirt oxidize, or rust, causing the surface to look red.",
+    "orbital_period": "687",
+    "distance_sol": "147,623,500",
+    "moons": "2",
+    "orbital_speed": 0.6,
+    "planet_type": "Terrestrial"
+  },
+  {
+    "title": "Jupiter",
+    "image_url": "https://apod.nasa.gov/apod/image/1904/JupiterDolphin_JunoEichstadt_3064.jpg",
+    "overview": "Jupiter is the fifth planet from our Sun and is, by far, the largest planet in the solar system – more than twice as massive as all the other planets combined. Jupiter's stripes and swirls are actually cold, windy clouds of ammonia and water, floating in an atmosphere of hydrogen and helium. Jupiter’s iconic Great Red Spot is a giant storm bigger than Earth that has raged for hundreds of years. \n\nJupiter is surrounded by 79 known moons. Scientists are most interested in the Galilean satellites – the four largest moons discovered by Galileo Galilei in 1610: Io, Europa, Ganymede and Callisto. Jupiter also has several rings, but unlike the famous rings of Saturn, Jupiter’s rings are very faint and made of dust, not ice. \n\nJupiter is named for the king of the ancient Roman gods.​",
+    "orbital_period": "4,333",
+    "distance_sol": "494,232,758",
+    "moons": "79",
+    "orbital_speed": 0.6,
+    "planet_type": "Gas giant"
+  },
+  {
+    "title": "Saturn",
+    "image_url": "https://solarsystem.nasa.gov/system/feature_items/images/154_saturn_carousel_4.jpg",
+    "overview": "Saturn is the sixth planet from the Sun and the second largest planet in our solar system. Adorned with a dazzling system of icy rings, Saturn is unique among the planets. It is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. \n\nSurrounded by more than 60 known moons, Saturn is home to some of the most fascinating landscapes in our solar system. From the jets of water that spray from Enceladus to the methane lakes on smoggy Titan, the Saturn system is a rich source of scientific discovery and still holds many mysteries. \n\nThe farthest planet from Earth discovered by the unaided human eye, Saturn has been known since ancient times. The planet is named for the Roman god of agriculture and wealth, who was also the father of Jupiter.",
+    "orbital_period": "29y",
+    "distance_sol": "934,656,896",
+    "moons": "9 confirmed, 9 provisional",
+    "orbital_speed": 0.6,
+    "planet_type": "Gas giant"
+  },
+  {
+    "title": "Uranus",
+    "image_url": "https://mk0spaceflightnoa02a.kinstacdn.com/wp-content/uploads/2015/08/uranus_true732X520.jpg",
+    "overview": "The seventh planet from the Sun with the third largest diameter in our solar system, Uranus is very cold and windy. The ice giant is surrounded by 13 faint rings and 27 small moons as it rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side, orbiting the Sun like a rolling ball. \n\nThe first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star. It was two years later that the object was universally accepted as a new planet, in part because of observations by astronomer Johann Elert Bode. \n\nWilliam Herschel tried unsuccessfully to name his discovery Georgium Sidus after King George III. Instead the planet was named for Uranus, the Greek god of the sky, as suggested by Johann Bode.",
+    "orbital_period": "84y",
+    "distance_sol": "1,938,208,479",
+    "moons": "27",
+    "orbital_speed": 0.6,
+    "planet_type": "Ice Giant"
+  },
+  {
+    "title": "Neptune",
+    "image_url": "https://solarsystem.nasa.gov/system/feature_items/images/82_carousel_neptune_1.jpg",
+    "overview": "Dark, cold and whipped by supersonic winds, ice giant Neptune is the eighth and most distant planet in our solar system. More than 30 times as far from the Sun as Earth, Neptune is the only planet in our solar system not visible to the naked eye. In 2011 Neptune completed its first 165-year orbit since its discovery in 1846. \n\nNeptune is so far from the Sun that high noon on the big blue planet would seem like dim twilight to us. The warm light we see here on our home planet is roughly 900 times as bright as sunlight on Neptune. \n\nThe ice giant Neptune was the first planet located through mathematical calculations. Using predictions made by Urbain Le Verrier, Johann Galle discovered the planet in 1846. The planet is named after the Roman god of the sea, as suggested by Le Verrier",
+    "orbital_period": "165y",
+    "distance_sol": "2,782,810,863",
+    "moons": "13 confirmed, 1 provisional",
+    "orbital_speed": 0.6
+  }
+]
+
+

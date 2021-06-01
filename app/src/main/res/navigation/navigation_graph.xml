@@ -13,60 +13,57 @@
 
         <action
             android:id="@+id/action_navigation_splash_to_navigation_onboarding"
-            app:destination="@id/navigation_onboarding" />
+            app:destination="@id/navigation_onboarding"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_navigation_splash_to_navigation_news"
-            app:destination="@id/navigation_news" />
+            app:destination="@id/navigation_news"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_splash"
+            app:popUpToInclusive="true"/>
+
     </fragment>
 
+    <!-- Navigation -->
     <fragment
         android:id="@+id/navigation_onboarding"
         android:name="com.timsimonhughes.atlas.ui.onboarding.OnboardingFragment"
         android:label="OnboardingFragment"
         tools:layout="@layout/fragment_onboarding"/>
 
-    <fragment android:id="@+id/navigation_news"
-        android:name="com.timsimonhughes.atlas.ui.news.NewsFragment"
-        android:label="NewsFragment"
-        tools:layout="@layout/fragment_news"/>
+    <!-- News -->
+    <include app:graph="@navigation/news_graph"/>
 
-    <fragment
-        android:id="@+id/navigation_discover"
-        android:name="com.timsimonhughes.atlas.ui.discover.DiscoverFragment"
-        android:label="StoriesFragment"
-        tools:layout="@layout/fragment_discover" />
+    <!-- Discover -->
+    <include app:graph="@navigation/discover_graph"/>
 
+    <!-- Launches -->
+    <include app:graph="@navigation/launches_graph"/>
+
+    <!-- Photo of day -->
     <fragment
         android:id="@+id/navigation_photo_of_day"
         android:name="com.timsimonhughes.atlas.ui.potd.POTDFragment"
         android:label="POTDFragment"
         tools:layout="@layout/fragment_photos"/>
 
-    <!-- News Detail -->
-    <fragment
-        android:id="@+id/navigation_news_detail"
-        android:name="com.timsimonhughes.atlas.ui.newsDetail.NewsDetailFragment"
-        android:label="fragment_news_detail"
-        tools:layout="@layout/fragment_news_detail" />
-
-    <fragment
-        android:id="@+id/navigation_discover_detail"
-        android:name="com.timsimonhughes.atlas.ui.disoverDetail.DiscoverDetailFragment"
-        android:label="DiscoverDetailFragment"
-        tools:layout="@layout/fragment_discover_detail"/>
-
     <fragment
         android:id="@+id/navigation_POTD_detail"
-        android:name="com.timsimonhughes.atlas.ui.potdDetail.POTDDetailFragment"
+        android:name="com.timsimonhughes.atlas.ui.potd.POTDDetail"
         android:label="POTDDetailFragment"
         tools:layout="@layout/fragment_potd_detail"/>
 
+    <!-- Settings -->
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.timsimonhughes.atlas.ui.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
-
 
 </navigation>
